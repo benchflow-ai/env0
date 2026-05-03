@@ -137,3 +137,11 @@ still contain small service maps and must be kept in sync when adding services.
 
 These examples are mockflow fixtures/templates, not source-of-truth task
 definitions.
+
+## License
+
+Mockflow is licensed under the GNU Affero General Public License v3.0 only
+(`AGPL-3.0-only`). See [LICENSE](LICENSE).
+
+You may self-host, use, modify, and redistribute Mockflow under the terms of
+the AGPL. BenchFlow also offers an official hosted Mockflow service.
