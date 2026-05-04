@@ -11,15 +11,24 @@ RUN uv pip install --system setuptools wheel
 FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl build-essential procps jq && rm -rf /var/lib/apt/lists/*
+    curl build-essential procps jq git && rm -rf /var/lib/apt/lists/*
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
     mv /root/.local/bin/uv /usr/local/bin/uv
 
+ENV OPENCLAW_PLUGIN_STAGE_DIR=/opt/openclaw/plugin-runtime-deps:/home/agent/.openclaw/plugin-runtime-deps
+RUN mkdir -p /opt/openclaw/plugin-runtime-deps && \
+    chmod -R a+rX /opt/openclaw/plugin-runtime-deps
+
 # Node.js 22 + AI CLIs
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
-    npm install -g @google/gemini-cli@latest @anthropic-ai/claude-code@latest openclaw@latest && \
+    npm install -g \
+        @google/gemini-cli@latest \
+        @agentclientprotocol/claude-agent-acp@latest \
+        @zed-industries/codex-acp@latest \
+        openclaw@latest || \
+      { cat /root/.npm/_logs/*-debug-0.log; exit 1; } && \
     npm cache clean --force && \
     rm -rf /var/lib/apt/lists/* /root/.npm /tmp/*
 
@@ -55,7 +64,7 @@ RUN mkdir -p /root/.config/gws/cache /home/agent/.config/gws/cache && \
 
 # Agent boot instructions — symlinked to each agent CLI's discovery path
 COPY docker/AGENTS.md /home/agent/AGENTS.md
-RUN mkdir -p /home/agent/.gemini /home/agent/.claude /home/agent/.openclaw && \
+RUN mkdir -p /home/agent/.gemini /home/agent/.claude /home/agent/.codex /home/agent/.agents /home/agent/.openclaw && \
     ln -sf /home/agent/AGENTS.md /home/agent/.gemini/GEMINI.md && \
     ln -sf /home/agent/AGENTS.md /home/agent/.claude/CLAUDE.md && \
     echo '{"version":1,"defaults":{"allow_all":true}}' > /home/agent/.openclaw/exec-approvals.json && \
