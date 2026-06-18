@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Unified fixture capture + conformance validation for all mockflow environments.
+# Unified fixture capture + conformance validation for all env0 environments.
 #
 # Thin orchestrator that calls each environment's capture_fixtures.py and
 # conformance tests, then generates a combined parity report.

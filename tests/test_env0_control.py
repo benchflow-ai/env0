@@ -12,8 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
-    "mockflow_control",
-    ROOT / "scripts" / "mockflow_control.py",
+    "env0_control",
+    ROOT / "scripts" / "env0_control.py",
 )
 assert SPEC is not None
 assert SPEC.loader is not None
@@ -32,7 +32,7 @@ sys.modules[DEVHUB_SPEC.name] = devhub
 DEVHUB_SPEC.loader.exec_module(devhub)
 
 
-class MockflowControlTests(unittest.TestCase):
+class Env0ControlTests(unittest.TestCase):
     def test_load_services_from_config(self):
         services = control.load_services()
 
@@ -191,7 +191,7 @@ class MockflowControlTests(unittest.TestCase):
             devhub.service_status = original_status
             devhub.dev_links = original_dev_links
 
-        self.assertIn("Mockflow Devhub", html)
+        self.assertIn("env0 Devhub", html)
         self.assertIn("mock-gmail", html)
         self.assertIn("MOCK_GMAIL_URL=http://127.0.0.1:9001", html)
         self.assertIn("mock-slack", html)
@@ -205,7 +205,7 @@ class MockflowControlTests(unittest.TestCase):
         self.assertIn('name="action" value="seed-task"', html)
         self.assertIn('name="task" value="email-confidential-forward"', html)
         self.assertIn("Seed Running Services", html)
-        self.assertIn('<a class="brand" href="/" aria-label="Mockflow Devhub home">', html)
+        self.assertIn('<a class="brand" href="/" aria-label="env0 Devhub home">', html)
         self.assertIn('<link href="/static/devhub.css" rel="stylesheet">', html)
         self.assertNotIn('class="menu"', html)
         self.assertNotIn('class="compose"', html)

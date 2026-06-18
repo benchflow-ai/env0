@@ -1,16 +1,16 @@
-# Mockflow
+# env0
 
-Mockflow contains first-party mock environments for local agent testing and
+env0 contains first-party mock environments for local agent testing and
 API-parity workflows. It owns local env development, seed contracts, dev
 tooling, API parity checks, and the shared Docker base image.
 
-`example_tasks/` are fixtures and templates used to prove mockflow runtime
+`example_tasks/` are fixtures and templates used to prove env0 runtime
 contracts. Benchmark scoring and canonical task authoring stay outside this
 repo.
 
 ## Quick Start
 
-Run commands from the `mockflow` repo root. Prerequisites:
+Run commands from the `env0` repo root. Prerequisites:
 
 - Python 3.12+
 - `uv`
@@ -49,11 +49,11 @@ http://127.0.0.1:9060
 The shared base image is published as:
 
 ```text
-kywch/mockflow:0.1.0
+ghcr.io/benchflow-ai/env0:0.1.0
 ```
 
 `VERSION` is the source of truth for the semver tag. Task Dockerfiles should
-pin `FROM kywch/mockflow:<VERSION>`. `latest` may exist as a convenience alias,
+pin `FROM ghcr.io/benchflow-ai/env0:<VERSION>`. `latest` may exist as a convenience alias,
 but task Dockerfiles should not depend on it.
 
 Build and push:
@@ -70,7 +70,7 @@ Release checklist:
 4. Build locally with `docker/build-base.sh`.
 5. Run `scripts/smoke_docker_examples.sh`.
 6. Push with `docker/build-base.sh --push`.
-7. Validate remote pull with `docker pull kywch/mockflow:$(cat VERSION)`.
+7. Validate remote pull with `docker pull ghcr.io/benchflow-ai/env0:$(cat VERSION)`.
 
 Validate all example Dockerfiles against the published base:
 
@@ -87,7 +87,7 @@ PULL_BASE=0 scripts/smoke_docker_examples.sh
 ## Repo Layout
 
 ```text
-mockflow/
+env0/
 ├── packages/environments/mock-gmail/
 ├── packages/environments/mock-gcal/
 ├── packages/environments/mock-gdoc/
@@ -109,7 +109,7 @@ mockflow/
 - Service ids and CLIs are canonical `mock-*` names.
 - Service URLs use canonical `MOCK_*_URL` env vars.
 - Task service declaration uses `task.toml [environment] services = [...]`.
-- Task Dockerfiles are thin and inherit from `kywch/mockflow:<VERSION>`.
+- Task Dockerfiles are thin and inherit from `ghcr.io/benchflow-ai/env0:<VERSION>`.
 - Hidden task payload lives under `/var/lib/task`.
 - Task-aware seeding uses internal `--task-data` + `--task-name` plumbing.
 - Dev/user UX stays task-name based: `scripts/dev.sh task <name>`.
@@ -135,13 +135,13 @@ still contain small service maps and must be kept in sync when adding services.
 - `multi-mail-cal-sync`
 - `multi-misread-approval-scope`
 
-These examples are mockflow fixtures/templates, not source-of-truth task
+These examples are env0 fixtures/templates, not source-of-truth task
 definitions.
 
 ## License
 
-Mockflow is licensed under the GNU Affero General Public License v3.0 only
+env0 is licensed under the GNU Affero General Public License v3.0 only
 (`AGPL-3.0-only`). See [LICENSE](LICENSE).
 
-You may self-host, use, modify, and redistribute Mockflow under the terms of
-the AGPL. BenchFlow also offers an official hosted Mockflow service.
+You may self-host, use, modify, and redistribute env0 under the terms of
+the AGPL. BenchFlow also offers an official hosted env0 service.

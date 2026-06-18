@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CONTROL="$ROOT/scripts/mockflow_control.py"
+CONTROL="$ROOT/scripts/env0_control.py"
 
 usage() {
   cat <<'EOF'
@@ -11,13 +11,13 @@ Usage:
   dev.sh task <name>
 
 Internal control contract:
-  scripts/mockflow_control.py --dry-run start-default [--devhub]
-  scripts/mockflow_control.py --dry-run start-task [--devhub] <name>
-  scripts/mockflow_control.py seed-default [service...]
-  scripts/mockflow_control.py seed-task <name> [service...]
-  scripts/mockflow_control.py reset [service...]
-  scripts/mockflow_control.py snapshot <name> [service...]
-  scripts/mockflow_control.py restore <name> [service...]
+  scripts/env0_control.py --dry-run start-default [--devhub]
+  scripts/env0_control.py --dry-run start-task [--devhub] <name>
+  scripts/env0_control.py seed-default [service...]
+  scripts/env0_control.py seed-task <name> [service...]
+  scripts/env0_control.py reset [service...]
+  scripts/env0_control.py snapshot <name> [service...]
+  scripts/env0_control.py restore <name> [service...]
 EOF
 }
 

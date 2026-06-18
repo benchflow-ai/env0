@@ -184,7 +184,7 @@ packages/environments/mock-gcal/
 └── pyproject.toml
 ```
 
-## Mockflow
+## env0
 
-This environment lives at `packages/environments/mock-gcal/` inside Mockflow.
+This environment lives at `packages/environments/mock-gcal/` inside env0.
 Use the repo root launcher for multi-service sessions and example-task seeding.

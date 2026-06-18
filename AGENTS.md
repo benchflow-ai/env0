@@ -1,11 +1,11 @@
-# Mockflow Agent Instructions
+# env0 Agent Instructions
 
-Mockflow owns mock environment development, local env tooling, seeding
+env0 owns mock environment development, local env tooling, seeding
 contracts, API parity, and the shared Docker base image.
 
 ## Boundaries
 
-- Do not turn mockflow into benchmark dashboard, verifier UI, or task-authoring
+- Do not turn env0 into benchmark dashboard, verifier UI, or task-authoring
   source of truth.
 - `example_tasks/` are fixtures/templates for env runtime testing, not canonical
   benchmark tasks.
@@ -21,13 +21,13 @@ contracts, API parity, and the shared Docker base image.
 - Keep public launcher UX task-name based: `scripts/dev.sh task <name>`.
 - Keep raw `--task-data` / task-data-path plumbing internal to env CLIs,
   control scripts, and Dockerfiles.
-- Thin task images must use `FROM kywch/mockflow:<VERSION>` and hidden payload
+- Thin task images must use `FROM ghcr.io/benchflow-ai/env0:<VERSION>` and hidden payload
   under `/var/lib/task`.
 - `VERSION` is the base-image semver source of truth.
 
 ## Commands
 
-No manual virtualenv setup is needed for normal mockflow workflows. The repo
+No manual virtualenv setup is needed for normal env0 workflows. The repo
 control/devhub scripts use stdlib Python, and env package commands are invoked
 through `uv run` when available. Install `uv`; let it create/sync per-package
 `.venv` state as needed.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repo-local control contract for mockflow dev sessions."""
+"""Repo-local control contract for env0 dev sessions."""
 
 from __future__ import annotations
 
@@ -101,8 +101,8 @@ def task_data_dir(task_name: str) -> Path:
 def env_for_services(services: Iterable[Service]) -> dict[str, str]:
     env = os.environ.copy()
     env["TASKS_DIR"] = str(EXAMPLE_TASKS)
-    env["MOCKFLOW_TASKS_DIR"] = str(EXAMPLE_TASKS)
-    env["MOCKFLOW_CONFIG_PATH"] = str(CONFIG_PATH)
+    env["ENV0_TASKS_DIR"] = str(EXAMPLE_TASKS)
+    env["ENV0_CONFIG_PATH"] = str(CONFIG_PATH)
     for service in services:
         env[service.env_var] = service.url
         env[f"{service.env_var.removesuffix('_URL')}_DB_PATH"] = str(service.abs_db_path)

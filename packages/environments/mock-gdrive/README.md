@@ -6,7 +6,7 @@ A high-fidelity, stateful mock of the Google Drive REST API v3, built for stress
 
 AI coding agents increasingly perform real-world tasks: organizing files, managing permissions, cleaning up storage, sharing documents. When these agents run against a real Google Drive account, mistakes are irreversible — a bad prompt can delete critical files, expose sensitive documents publicly, or destroy folder structures built over years.
 
-Mock GDrive provides a safe, fully stateful Drive environment where agents can be exercised against realistic data without touching production accounts. It is part of Mockflow's first-party mock environment suite.
+Mock GDrive provides a safe, fully stateful Drive environment where agents can be exercised against realistic data without touching production accounts. It is part of env0's first-party mock environment suite.
 
 ## What it does
 
@@ -197,6 +197,6 @@ packages/environments/mock-gdrive/
 └── pyproject.toml
 ```
 
-## Mockflow
+## env0
 
-This environment lives at `packages/environments/mock-gdrive/` inside Mockflow. Use the repo root launcher for multi-service sessions and example-task seeding.
+This environment lives at `packages/environments/mock-gdrive/` inside env0. Use the repo root launcher for multi-service sessions and example-task seeding.

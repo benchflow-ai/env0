@@ -8,7 +8,7 @@ Paths/names were mechanically updated toward `packages/environments/mock-*`.
 
 ## Current Fixture Set
 
-Current real golden fixture count in `mockflow`:
+Current real golden fixture count in `env0`:
 
 - Gmail: 35 fixtures
 - GCal: 31 fixtures
@@ -82,7 +82,7 @@ The notebooks are included as starting points:
 - `gdrive-parity-audit.ipynb`
 - `slack-parity-audit.ipynb`
 
-Treat them as review artifacts until each one is rerun in the mockflow repo.
+Treat them as review artifacts until each one is rerun in the env0 repo.
 Before using a notebook as a gate, verify it:
 
 - load fixtures from `packages/environments/mock-*/tests/fixtures`

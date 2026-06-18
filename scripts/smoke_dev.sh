@@ -2,9 +2,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CONTROL="$ROOT/scripts/mockflow_control.py"
+CONTROL="$ROOT/scripts/env0_control.py"
 DB="$ROOT/.data/dev/data/gdrive.db"
-ADMIN_DB="$(mktemp -u "/tmp/mockflow-gdrive-devhub-smoke.XXXXXX.db")"
+ADMIN_DB="$(mktemp -u "/tmp/env0-gdrive-devhub-smoke.XXXXXX.db")"
 ADMIN_PORT="$(python3 - <<'PY'
 import socket
 
@@ -20,7 +20,7 @@ log() {
 }
 
 log "unit tests"
-python3 -m unittest "$ROOT/tests/test_mockflow_control.py"
+python3 -m unittest "$ROOT/tests/test_env0_control.py"
 
 log "control dry-runs"
 python3 "$CONTROL" --dry-run start-default >/dev/null
@@ -61,11 +61,11 @@ log "devhub admin task seed path"
 rm -f "$ADMIN_DB" "$ADMIN_DB-shm" "$ADMIN_DB-wal"
 (
   cd "$ROOT/packages/environments/mock-gdrive"
-  uv run mock-gdrive --db "$ADMIN_DB" seed --scenario default >/tmp/mockflow-gdrive-devhub-seed.log
+  uv run mock-gdrive --db "$ADMIN_DB" seed --scenario default >/tmp/env0-gdrive-devhub-seed.log
 )
 (
   cd "$ROOT/packages/environments/mock-gdrive"
-  TASKS_DIR="$ROOT/example_tasks" uv run mock-gdrive --db "$ADMIN_DB" serve --host 127.0.0.1 --port "$ADMIN_PORT" --no-mcp >/tmp/mockflow-gdrive-devhub-serve.log 2>&1
+  TASKS_DIR="$ROOT/example_tasks" uv run mock-gdrive --db "$ADMIN_DB" serve --host 127.0.0.1 --port "$ADMIN_PORT" --no-mcp >/tmp/env0-gdrive-devhub-serve.log 2>&1
 ) &
 SERVER_PID=$!
 cleanup_server() {
