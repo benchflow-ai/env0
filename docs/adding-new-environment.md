@@ -1,6 +1,9 @@
 # Adding a New Environment
 
-This guide describes how to add a first-party mock service to `env0`.
+Idea to merged mock service. An env0 environment is a deterministic,
+high-fidelity mock of a real service API plus local dev surfaces. Agents should
+be able to point tools at localhost instead of a production provider without
+changing their normal workflow.
 
 Existing services:
 
@@ -9,6 +12,10 @@ Existing services:
 - `mock-gdoc`
 - `mock-gdrive`
 - `mock-slack`
+
+Adding an environment is larger than adding an example task because the service
+package is installed into the shared Docker base image. Keep the change narrow:
+environment code, fixtures, conformance tests, config registration, and docs.
 
 ## Package Layout
 
@@ -42,7 +49,8 @@ packages/environments/mock-new/
 ```
 
 `tasks/` inside an env package is optional and only for env-local development.
-Repo-level task-shaped fixtures live in `env0/example_tasks`.
+Repo-level task-shaped fixtures live in `env0/example_tasks`. Canonical
+benchmark task authoring lives downstream.
 
 ## CLI Contract
 
@@ -60,6 +68,9 @@ mock-new --db /path/to/new.db seed --scenario default
 mock-new --db /path/to/new.db serve --host 0.0.0.0 --port 9006 --no-mcp
 mock-new --db /path/to/new.db reset
 ```
+
+`seed` must save an initial snapshot. `reset`, `/_admin/reset`, and
+`/_admin/diff` depend on that baseline.
 
 If the env supports task-aware seeding, also support:
 
@@ -88,6 +99,11 @@ Every service should expose:
 - `/dev/api-explorer`
 - `/dev/db-viewer`
 
+The mock API should mirror the real provider's paths, response shapes, error
+bodies, pagination, and mutation side effects closely enough that agent
+failures are meaningful. Toy shapes are worse than missing endpoints because
+they teach agents the wrong contract.
+
 Admin task seeding should validate `task_name` before destructive DB reset:
 
 - require `TASKS_DIR`
@@ -95,6 +111,15 @@ Admin task seeding should validate `task_name` before destructive DB reset:
 - reject path traversal
 - require `data/needles.py`
 - drop/reseed only after validation passes
+
+Two design rules make verifiers and debugging much more reliable:
+
+- Stamp a stable role marker into object metadata when the real API has a place
+  for metadata. Evaluators should resolve ids from roles, emails, titles, or
+  other seeded facts instead of hardcoding generated ids.
+- Record meaningful `action_log` entries for mutations and important reads.
+  Verifiers often need to distinguish a correct final state from a lucky or
+  unsafe path.
 
 ## Register In Config
 
@@ -128,19 +153,26 @@ After adding a service, update current service-map exceptions:
 `docker/generate_dockerfile.py` reads `config.toml` and the environment package
 dirs to generate `docker/Dockerfile.base`.
 
-Build:
+Build locally:
 
 ```bash
 docker/build-base.sh
 ```
 
-Push release tags:
+Push release tags only if the GHCR package exists and your account has package
+write permission:
 
 ```bash
 docker/build-base.sh --push
 ```
 
 `VERSION` controls the canonical semver tag.
+
+Validate the generated Dockerfile without building:
+
+```bash
+python3 docker/generate_dockerfile.py --dry-run >/tmp/env0-Dockerfile.base
+```
 
 ## Example Task Dockerfile
 
@@ -186,7 +218,8 @@ Then from repo root:
 
 ```bash
 scripts/smoke_dev.sh
-scripts/smoke_docker_examples.sh
+docker/build-base.sh
+PULL_BASE=0 scripts/smoke_docker_examples.sh
 ```
 
 Also check:
@@ -200,7 +233,8 @@ Also check:
 
 If adding an example task, ensure:
 
-- Dockerfile builds from `ghcr.io/benchflow-ai/env0:<VERSION>`
+- Dockerfile builds from `ghcr.io/benchflow-ai/env0:<VERSION>` after
+  `docker/build-base.sh` has created that tag locally.
 - expected DB files are seeded
 - services start and pass `/health`
 - hidden payload is unreadable by `agent`

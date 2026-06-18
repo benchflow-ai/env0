@@ -34,16 +34,6 @@ uv run mock-gdrive serve
 
 `uv run` reads `pyproject.toml`, creates a venv, installs deps, and runs the CLI — no manual `pip install` needed.
 
-### Alternative: pip install
-
-If you prefer a traditional install:
-
-```bash
-pip install -e ".[all]"
-mock-gdrive seed
-mock-gdrive serve
-```
-
 ## CLI
 
 ```

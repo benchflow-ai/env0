@@ -43,16 +43,6 @@ uv run mock-gmail serve --no-mcp
 | `default` | ~57 | Quick testing |
 | `long_context` | ~3000 | Stress-testing: search, pagination, safety, ambiguous cleanup |
 
-### Alternative: pip install
-
-If you prefer a traditional install:
-
-```bash
-pip install -e ".[all]"
-mock-gmail seed --scenario long_context
-mock-gmail serve --no-mcp
-```
-
 ## CLI
 
 ```

@@ -1,12 +1,18 @@
 # env0
 
-env0 contains first-party mock environments for local agent testing and
-API-parity workflows. It owns local env development, seed contracts, dev
-tooling, API parity checks, and the shared Docker base image.
+env0 is the first-party mock-environment runtime for agent testing. It provides
+stateful, deterministic mock services for local development, seed contracts,
+API-parity checks, dev tooling, and a shared Docker base image.
 
-`example_tasks/` are fixtures and templates used to prove env0 runtime
-contracts. Benchmark scoring and canonical task authoring stay outside this
-repo.
+The repo has two deliberately separate task surfaces:
+
+- `example_tasks/` are small runtime fixtures used to prove env0 service and
+  launcher contracts.
+- `tasks/` contains selected BenchFlow-native task packages copied from
+  `benchflow-ai/env-0` for reference and downstream evaluation.
+
+Canonical benchmark authoring and scoring policy still belong in downstream
+benchmark repos, not in env0.
 
 ## Quick Start
 
@@ -21,6 +27,12 @@ Run the unit/control smoke:
 
 ```bash
 scripts/smoke_dev.sh
+```
+
+Render the devhub once without starting services:
+
+```bash
+python3 devhub/app.py --render-once
 ```
 
 Start every configured mock service plus devhub:
@@ -46,17 +58,29 @@ http://127.0.0.1:9060
 
 ## Docker Base Image
 
-The shared base image is published as:
+The shared base image tag is:
 
 ```text
 ghcr.io/benchflow-ai/env0:0.1.0
 ```
 
-`VERSION` is the source of truth for the semver tag. Task Dockerfiles should
-pin `FROM ghcr.io/benchflow-ai/env0:<VERSION>`. `latest` may exist as a convenience alias,
-but task Dockerfiles should not depend on it.
+`VERSION` is the source of truth for the semver tag. Example task Dockerfiles
+pin `FROM ghcr.io/benchflow-ai/env0:<VERSION>`.
 
-Build and push:
+Build locally:
+
+```bash
+docker/build-base.sh
+```
+
+Validate example task images against the locally built base:
+
+```bash
+PULL_BASE=0 scripts/smoke_docker_examples.sh
+```
+
+Push release tags only when the GHCR package exists and the maintainer account
+has package-write permission:
 
 ```bash
 docker/build-base.sh --push
@@ -68,21 +92,9 @@ Release checklist:
 2. Run `scripts/smoke_dev.sh`.
 3. Run changed env tests, for example `cd packages/environments/mock-gdrive && uv run --extra dev pytest tests -q`.
 4. Build locally with `docker/build-base.sh`.
-5. Run `scripts/smoke_docker_examples.sh`.
-6. Push with `docker/build-base.sh --push`.
-7. Validate remote pull with `docker pull ghcr.io/benchflow-ai/env0:$(cat VERSION)`.
-
-Validate all example Dockerfiles against the published base:
-
-```bash
-scripts/smoke_docker_examples.sh
-```
-
-For faster local reruns:
-
-```bash
-PULL_BASE=0 scripts/smoke_docker_examples.sh
-```
+5. Run `PULL_BASE=0 scripts/smoke_docker_examples.sh`.
+6. Push with `docker/build-base.sh --push` if package permissions are configured.
+7. Validate remote pull with `docker pull ghcr.io/benchflow-ai/env0:$(cat VERSION)` only after the push succeeds.
 
 ## Repo Layout
 
@@ -120,10 +132,13 @@ still contain small service maps and must be kept in sync when adding services.
 
 ## Docs
 
+- [Docs index](docs/README.md)
 - [Local dev and devhub](docs/dev.md)
+- [Good first contributions](docs/good-first-contributions.md)
 - [Adding a new environment](docs/adding-new-environment.md)
 - [API validation playbook](docs/api-validation-playbook.md)
 - [Parity audit](docs/parity-audit/README.md)
+- [Validated workflows](docs/validated-workflows.md)
 
 ## Example Tasks
 

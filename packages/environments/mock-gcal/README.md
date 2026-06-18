@@ -26,14 +26,6 @@ uv run mock-gcal serve --no-mcp
 
 `uv run` reads `pyproject.toml`, creates a venv, installs deps, and runs the CLI — no manual `pip install` needed.
 
-### Alternative: pip install
-
-```bash
-pip install -e ".[all]"
-mock-gcal seed
-mock-gcal serve
-```
-
 ## Scenarios
 
 | Scenario | Events | Use case |
