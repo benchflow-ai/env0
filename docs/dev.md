@@ -1,4 +1,4 @@
-# Mockflow Dev Launcher
+# env0 Dev Launcher
 
 Phase 1 provides a repo-local launcher, control contract, and small devhub. It
 does not add verifier UI, eval UI, or benchmark dashboards.
@@ -24,17 +24,17 @@ Tasks are resolved from `example_tasks/<name>`. The launcher reads
 
 ## Control Contract
 
-`scripts/mockflow_control.py` is the stable repo-local control path used by the
+`scripts/env0_control.py` is the stable repo-local control path used by the
 launcher and devhub:
 
 ```bash
-scripts/mockflow_control.py start-default
-scripts/mockflow_control.py start-task <task-name>
-scripts/mockflow_control.py seed-default [service...]
-scripts/mockflow_control.py seed-task <task-name> [service...]
-scripts/mockflow_control.py reset [service...]
-scripts/mockflow_control.py snapshot <name> [service...]
-scripts/mockflow_control.py restore <name> [service...]
+scripts/env0_control.py start-default
+scripts/env0_control.py start-task <task-name>
+scripts/env0_control.py seed-default [service...]
+scripts/env0_control.py seed-task <task-name> [service...]
+scripts/env0_control.py reset [service...]
+scripts/env0_control.py snapshot <name> [service...]
+scripts/env0_control.py restore <name> [service...]
 ```
 
 Use `--dry-run` to prove the contract without starting processes or sending
@@ -76,7 +76,7 @@ run verifiers or evals.
 
 Env-local `/dev/tasks` menus/routes are intentionally not part of the dev
 surface. Repo task browsing and task-shaped seeding live in devhub; evaluator
-execution stays out of mockflow devhub scope.
+execution stays out of env0 devhub scope.
 
 Empty stale task admin/docs surfaces are also hidden where no env-local task
 registry exists. Gmail/GDoc/GCal keep env-local task admin APIs temporarily for

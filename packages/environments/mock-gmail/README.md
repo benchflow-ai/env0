@@ -6,7 +6,7 @@ A high-fidelity, stateful mock of the Gmail REST API, built for stress-testing A
 
 AI coding agents increasingly perform real-world tasks: reading email, sending replies, managing labels, organizing inboxes. When these agents run against a real Gmail account, mistakes are irreversible.
 
-Mock Gmail provides a safe, fully stateful Gmail environment where agents can be exercised against realistic data without touching production inboxes. It is part of Mockflow's first-party mock environment suite.
+Mock Gmail provides a safe, fully stateful Gmail environment where agents can be exercised against realistic data without touching production inboxes. It is part of env0's first-party mock environment suite.
 
 ## What it does
 
@@ -121,7 +121,7 @@ scripts/dev.sh task email-confidential-forward
 
 `mock-gmail seed --scenario <name>` creates a SQLite database (`.db` file) with generated emails, then saves the full DB state to `snapshots/initial.json`. This JSON snapshot is the reference "clean" state.
 
-When the server's `/_admin/reset` endpoint is called (e.g. between evaluation task runs), it restores the DB from `initial.json` back to the original seeded state. This is how Mockflow evaluation workflows run multiple attempts against the same starting mailbox.
+When the server's `/_admin/reset` endpoint is called (e.g. between evaluation task runs), it restores the DB from `initial.json` back to the original seeded state. This is how env0 evaluation workflows run multiple attempts against the same starting mailbox.
 
 - `*.db` files are temporary and gitignored — recreated each time you seed
 - `snapshots/initial.json` is the seed state reference, used by reset
@@ -153,6 +153,6 @@ packages/environments/mock-gmail/
 └── pyproject.toml
 ```
 
-## Mockflow
+## env0
 
-This environment lives at `packages/environments/mock-gmail/` inside Mockflow. Use the repo root launcher for multi-service sessions and example-task seeding.
+This environment lives at `packages/environments/mock-gmail/` inside env0. Use the repo root launcher for multi-service sessions and example-task seeding.

@@ -3,7 +3,7 @@
 Historical source: initial parity audit generated 2026-03-27 by a 3-agent
 audit council.
 
-This file is kept as the initial mockflow parity baseline. Notebook files have
+This file is kept as the initial env0 parity baseline. Notebook files have
 been ported into this directory with `mock-*` path/name updates, but should be
 rerun before treating their results as current gates.
 
@@ -41,7 +41,7 @@ Historical initial-audit fixtures were captured 2026-03-27:
 - Slack: 52 fixtures
 - Total: 165 golden fixtures
 
-Current mockflow real golden fixture count:
+Current env0 real golden fixture count:
 
 - Gmail: 35 fixtures
 - GCal: 31 fixtures
@@ -50,7 +50,7 @@ Current mockflow real golden fixture count:
 - Slack: 57 fixtures
 - Total: 171 golden fixtures
 
-## Mockflow Refresh Needed
+## env0 Refresh Needed
 
 - Verify all paths/names use current `mock-*` contracts.
 - Verify fixture coverage maps under each `packages/environments/mock-*`.

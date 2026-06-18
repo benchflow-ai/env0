@@ -41,15 +41,15 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
     rustup self uninstall -y && \
     rm -rf /root/.cargo/registry /root/.cargo/git
 COPY docker/gws-wrapper.sh /usr/local/bin/gws
-COPY docker/gws-discovery-cache /opt/mockflow/gws-discovery-cache
+COPY docker/gws-discovery-cache /opt/env0/gws-discovery-cache
 RUN chmod +x /usr/local/bin/gws && \
-    chmod -R a+rX /opt/mockflow/gws-discovery-cache
+    chmod -R a+rX /opt/env0/gws-discovery-cache
 
 # Copy installed Python dependencies from builder (repo checkout stays in discarded stage)
 {{MOCK_COPY}}
 
 # Service URLs generated from config.toml (SSOT).
-COPY config.toml /etc/mockflow/config.toml
+COPY config.toml /etc/env0/config.toml
 {{MOCK_ENV}}
 
 # Non-root agent user
@@ -58,8 +58,8 @@ RUN useradd -m -s /bin/bash agent
 # Seed gws discovery cache for root/oracle and agent users. The wrapper also
 # refreshes per-service cache mtimes before exec so old images stay offline.
 RUN mkdir -p /root/.config/gws/cache /home/agent/.config/gws/cache && \
-    cp /opt/mockflow/gws-discovery-cache/*.json /root/.config/gws/cache/ && \
-    cp /opt/mockflow/gws-discovery-cache/*.json /home/agent/.config/gws/cache/ && \
+    cp /opt/env0/gws-discovery-cache/*.json /root/.config/gws/cache/ && \
+    cp /opt/env0/gws-discovery-cache/*.json /home/agent/.config/gws/cache/ && \
     chown -R agent:agent /home/agent/.config/gws
 
 # Agent boot instructions — symlinked to each agent CLI's discovery path
@@ -77,6 +77,6 @@ WORKDIR /app
 # /var/lib/task — hidden task payload (data/ + solution/)
 # /data         — agent must use HTTP API, not read .db files directly
 # /data/oracle  — privileged oracle manifest + artifacts
-# /etc/mockflow — internal service metadata
+# /etc/env0 — internal service metadata
 RUN mkdir -p /var/lib/task /data/oracle && \
-    chmod 700 /var/lib/task /data /data/oracle /etc/mockflow
+    chmod 700 /var/lib/task /data /data/oracle /etc/env0

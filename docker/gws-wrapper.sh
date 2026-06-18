@@ -13,7 +13,7 @@
 #   gws slack    -> MOCK_SLACK_URL    -> http://localhost:9005
 # Falls through to GOOGLE_WORKSPACE_CLI_API_BASE_URL if no per-service var is set.
 
-BUNDLED_CACHE_DIR="${GWS_DISCOVERY_CACHE_DIR:-/opt/mockflow/gws-discovery-cache}"
+BUNDLED_CACHE_DIR="${GWS_DISCOVERY_CACHE_DIR:-/opt/env0/gws-discovery-cache}"
 
 SERVICE="$1"
 

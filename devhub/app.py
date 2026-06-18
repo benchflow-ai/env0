@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tiny mockflow devhub for inspecting already-started dev services."""
+"""Tiny env0 devhub for inspecting already-started dev services."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ TEMPLATE_DIR = DEVHUB_ROOT / "templates"
 STATIC_DIR = DEVHUB_ROOT / "static"
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import mockflow_control as control  # noqa: E402
+import env0_control as control  # noqa: E402
 
 
 DEVHUB_PORT = 9060
@@ -328,7 +328,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     server = ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f"Mockflow Devhub: http://{args.host}:{args.port}")
+    print(f"env0 Devhub: http://{args.host}:{args.port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-IMAGE_PREFIX="${IMAGE_PREFIX:-mockflow-example}"
+IMAGE_PREFIX="${IMAGE_PREFIX:-env0-example}"
 PULL_BASE="${PULL_BASE:-1}"
 
 log() {
@@ -20,7 +20,11 @@ build_image() {
   fi
 
   log "build $task"
-  docker build "${build_args[@]}" -t "$image" -f "$dockerfile" "$ROOT"
+  if [[ ${#build_args[@]} -gt 0 ]]; then
+    docker build "${build_args[@]}" -t "$image" -f "$dockerfile" "$ROOT"
+  else
+    docker build -t "$image" -f "$dockerfile" "$ROOT"
+  fi
 }
 
 service_db_path() {

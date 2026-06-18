@@ -1,6 +1,6 @@
 # Adding a New Environment
 
-This guide describes how to add a first-party mock service to `mockflow`.
+This guide describes how to add a first-party mock service to `env0`.
 
 Existing services:
 
@@ -42,7 +42,7 @@ packages/environments/mock-new/
 ```
 
 `tasks/` inside an env package is optional and only for env-local development.
-Repo-level task-shaped fixtures live in `mockflow/example_tasks`.
+Repo-level task-shaped fixtures live in `env0/example_tasks`.
 
 ## CLI Contract
 
@@ -147,7 +147,7 @@ docker/build-base.sh --push
 Use thin task images. Do not copy env source code into task images.
 
 ```dockerfile
-FROM kywch/mockflow:<VERSION>
+FROM ghcr.io/benchflow-ai/env0:<VERSION>
 
 WORKDIR /app
 ENV TASK_ROOT=/var/lib/task
@@ -200,7 +200,7 @@ Also check:
 
 If adding an example task, ensure:
 
-- Dockerfile builds from `kywch/mockflow:<VERSION>`
+- Dockerfile builds from `ghcr.io/benchflow-ai/env0:<VERSION>`
 - expected DB files are seeded
 - services start and pass `/health`
 - hidden payload is unreadable by `agent`

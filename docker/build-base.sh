@@ -6,7 +6,7 @@
 #   ./docker/build-base.sh --push   # build + push both tags
 set -euo pipefail
 
-REPO="${REPO:-kywch/mockflow}"
+REPO="${REPO:-ghcr.io/benchflow-ai/env0}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 VERSION_FILE="${VERSION_FILE:-$ROOT_DIR/VERSION}"

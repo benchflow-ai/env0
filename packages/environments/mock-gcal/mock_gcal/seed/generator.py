@@ -220,7 +220,7 @@ SCENARIOS = {
 
 def _candidate_task_roots() -> list[pathlib.Path]:
     roots: list[pathlib.Path] = []
-    for env_name in ("TASKS_DIR", "MOCKFLOW_TASKS_DIR"):
+    for env_name in ("TASKS_DIR", "ENV0_TASKS_DIR"):
         env_value = os.environ.get(env_name)
         if env_value:
             roots.append(pathlib.Path(env_value))
