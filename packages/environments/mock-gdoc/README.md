@@ -5,13 +5,13 @@ Mock Google Docs environment for AI agent evaluation. Provides a Google Docs API
 ## Quick Start
 
 ```bash
-# Install
-pip install -e ".[dev]"
-
-# Seed and run
-mock-gdoc seed --scenario default
-mock-gdoc serve --port 9004
+uv run mock-gdoc seed --scenario default
+uv run mock-gdoc serve --port 9004 --no-mcp
 ```
+
+`uv run` reads `pyproject.toml`, creates/syncs the package environment, and
+runs the CLI. No manual virtualenv or editable install is needed for normal
+repo workflows.
 
 Default endpoints:
 

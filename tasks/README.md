@@ -11,3 +11,19 @@ These tasks intentionally keep their original `env-0` runtime contract:
 
 They are not wired into `example_tasks/`, which remain env0's local runtime
 fixtures for mock service development.
+
+## Validation
+
+Structural validation uses BenchFlow:
+
+```bash
+for task in tasks/*; do
+  [ -d "$task" ] || continue
+  [ "$(basename "$task")" = "_manifests" ] && continue
+  bench tasks check "$task" --level structural
+done
+```
+
+End-to-end evaluation requires `ghcr.io/benchflow-ai/env-0-base:latest` to be
+pullable by the sandbox backend. If that image is private or missing, task image
+builds will fail before any agent or verifier runs.
