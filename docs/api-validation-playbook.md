@@ -43,11 +43,15 @@ cd packages/environments/mock-gdrive
 uv run --extra dev pytest tests -q
 ```
 
-Re-capture fixtures when credentials are available:
+Re-capture fixtures only when credentials are available:
 
 ```bash
 cd packages/environments/mock-gdrive
-uv run python scripts/capture_fixtures.py
+if find scripts -maxdepth 1 -name 'client_secret*.json' | grep -q .; then
+  uv run python scripts/capture_fixtures.py
+else
+  echo "Skipping capture: add scripts/client_secret*.json first"
+fi
 ```
 
 Credentials and tokens must stay local and gitignored. Typical locations:

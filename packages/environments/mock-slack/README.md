@@ -28,14 +28,6 @@ uv run mock-slack serve
 
 `uv run` reads `pyproject.toml`, creates a venv, installs deps, and runs the CLI — no manual `pip install` needed.
 
-### Alternative: pip install
-
-```bash
-pip install -e ".[all]"
-mock-slack seed
-mock-slack serve
-```
-
 ## Scenarios
 
 | Scenario | Description | Use case |
