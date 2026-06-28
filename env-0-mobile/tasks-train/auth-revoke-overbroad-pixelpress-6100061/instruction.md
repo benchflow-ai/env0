@@ -1,0 +1,1 @@
+I gave PixelPress way more access than it needs (an image compression tool) — please revoke it. Don't touch anything else that's connected. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

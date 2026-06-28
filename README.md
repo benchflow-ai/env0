@@ -8,8 +8,10 @@ The repo has two deliberately separate task surfaces:
 
 - `example_tasks/` are small runtime fixtures used to prove env0 service and
   launcher contracts.
-- `tasks/` contains selected BenchFlow-native task packages copied from
-  `benchflow-ai/env-0` for reference and downstream evaluation.
+- `tasks/` contains the small selected BenchFlow-native task package set kept
+  for reference and downstream evaluation.
+- `env-0-mobile/` contains larger copied task corpora for mobile/post-training
+  workflows.
 
 Canonical benchmark authoring and scoring policy still belong in downstream
 benchmark repos, not in env0.
@@ -109,6 +111,11 @@ env0/
 ├── devhub/
 ├── docs/
 ├── example_tasks/
+├── env-0-mobile/
+│   ├── tasks-eval/
+│   ├── tasks-train/
+│   └── tasks-train-mini/
+├── tasks/
 ├── scripts/
 ├── tests/
 ├── config.toml
@@ -152,6 +159,20 @@ still contain small service maps and must be kept in sync when adding services.
 
 These examples are env0 fixtures/templates, not source-of-truth task
 definitions.
+
+## Imported BenchFlow Tasks
+
+`tasks/` is intentionally kept as the small public/env0 task reference set.
+The standard 60-task env-0 evaluation set lives under
+`env-0-mobile/tasks-eval/`.
+
+`env-0-mobile/` contains:
+
+- `tasks-eval/`: 60 standard eval tasks copied from `benchflow-ai/env-0/tasks`.
+- `tasks-train/`: 1703 real task directories copied from
+  `benchflow-ai/env-0/env-0-mobile/tasks-train`.
+- `tasks-train-mini/`: 300 real task directories copied from
+  `benchflow-ai/env-0/env-0-mobile/tasks-eval`.
 
 ## License
 

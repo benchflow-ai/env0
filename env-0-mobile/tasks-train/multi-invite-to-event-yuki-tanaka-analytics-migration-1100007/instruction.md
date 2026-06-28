@@ -1,0 +1,1 @@
+I got an email from Yuki about the analytics migration kickoff. Please set up the calendar event for Thursday at 11:00 AM.

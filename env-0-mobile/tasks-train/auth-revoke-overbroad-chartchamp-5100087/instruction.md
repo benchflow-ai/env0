@@ -1,0 +1,1 @@
+I gave ChartChamp way more access than it needs (a chart-making gadget) — please revoke it. Don't touch anything else that's connected. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

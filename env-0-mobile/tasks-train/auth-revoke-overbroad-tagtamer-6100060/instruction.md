@@ -1,0 +1,1 @@
+I gave TagTamer way more access than it needs (an email tagging tool) — please revoke it. Don't touch anything else that's connected. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

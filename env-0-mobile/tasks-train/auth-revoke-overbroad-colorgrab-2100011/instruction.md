@@ -1,0 +1,1 @@
+Please remove ColorGrab from my connected apps. It's a screenshot color-picker and shouldn't have full access to my Gmail and Drive. Keep the rest as-is. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

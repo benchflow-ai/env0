@@ -1,0 +1,1 @@
+Heads up: some of my sensitive Drive files (cap table, payroll, that LOI) look like they're shared with outsiders or set to public. Please revoke those bad shares. Leave my normal files and their legit shares alone.
