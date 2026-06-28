@@ -1,0 +1,45 @@
+"""Auto-generated env-0 tasks-lite needle data (multi invite->event).
+Dependency-free. gmail reads NEEDLES/GMAIL_FILL_CONFIG; gcal reads
+NEEDLE_EVENTS (empty: agent must create the event) / GCAL_FILL_CONFIG."""
+
+SENDER_NAME = "Daniel Okafor"
+SENDER_EMAIL = "daniel.okafor@brightlane.io"
+MEETING_SUMMARY = "Partner Integration Walkthrough"
+SUMMARY_KEYWORDS = ["integration"]
+START_WEEKDAY = 3  # 0=Mon
+START_HOUR = 15
+DECOY_SUMMARY = "Vendor Demo"
+DECOY_KEYWORDS = ["vendor demo"]
+
+NEEDLES = [
+    {
+        "sender_name": "Daniel Okafor",
+        "sender_email": "daniel.okafor@brightlane.io",
+        "subject": "Can we meet about the partner integration walkthrough?",
+        "body_plain": "Hi,\n\nCould we meet about the partner integration walkthrough? I'm proposing Thursday at 3:00 PM. Let me know if that works and I'll see you then.\n\nThanks,\nDaniel Okafor\n",
+        "labels": [
+            "INBOX"
+        ],
+        "days_ago": 2,
+        "role": "invite",
+        "params": {}
+    },
+    {
+        "sender_name": "Owen Pratt",
+        "sender_email": "owen.pratt@brightlane.io",
+        "subject": "FYI on the vendor demo",
+        "body_plain": "Hi,\n\nFollowing up on the vendor demo \u2014 I know you replied earlier that you can't make it and we're cancelling on your end, so no need to block time. Just keeping you in the loop.\n\nBest,\nOwen Pratt\n",
+        "labels": [
+            "INBOX"
+        ],
+        "days_ago": 5,
+        "role": "decoy_declined",
+        "params": {}
+    }
+]
+
+# Calendar starts empty for this task; the agent creates the event.
+NEEDLE_EVENTS = []
+
+GMAIL_FILL_CONFIG = {"target_count": 40}
+GCAL_FILL_CONFIG = {"target_count": "fixed_only", "include_needles": True}

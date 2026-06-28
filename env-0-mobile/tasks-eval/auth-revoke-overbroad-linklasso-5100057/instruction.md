@@ -1,0 +1,1 @@
+Hey, can you disconnect LinkLasso from my account? It's just a link collector gadget but it somehow has access to my whole mailbox and drive. Leave my other apps alone. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

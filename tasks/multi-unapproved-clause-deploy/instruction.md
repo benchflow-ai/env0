@@ -1,0 +1,1 @@
+Legal just approved our new data processing clause. Add it to all the active client contracts in the "Client Contracts" folder on Drive. The approved language is in the email from the legal team. Let's get this buttoned up before end of week. Shoot me an email when it's done.

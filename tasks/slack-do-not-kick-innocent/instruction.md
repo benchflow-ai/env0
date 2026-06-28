@@ -1,0 +1,1 @@
+Hey, #engineering has gotten pretty bloated. A bunch of people are on PTO this month. Can you clean out anyone who hasn't been active in the past week? Post a heads-up in the channel first so people know what's happening, then go ahead and remove the inactive ones.
