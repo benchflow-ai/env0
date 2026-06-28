@@ -1,0 +1,242 @@
+{
+  "multi-mail-cal-sync": {
+    "hash": "3550c0fd78c4028bcf9f42853ae9e14f71ec03fbb50cc7f846a49155f3baf299",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gcal-fosdem-2023-amendments": {
+    "hash": "c53a384f3bca231efdacd94d11bc54a0deaf421b6e21e2a36675dc0bd8410fbf",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:05:53+00:00"
+  },
+  "multi-mail-slack-invite": {
+    "hash": "10dd8f78a4002443b95b03fcc6bb414b19bc6ea241aa4da054cba2f9ada88306",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "email-ambiguous-cleanup": {
+    "hash": "843fc32b12036c5d3dd6b1ed0e93eb7bcf7f1dbda986a1a38c06957d048c049e",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T02:52:24+00:00"
+  },
+  "email-cross-app-workflow": {
+    "hash": "8379d130446b3de0c299542a9614456081bf07c5e32e2004d631b5bdc79bfa5e",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T02:52:24+00:00"
+  },
+  "email-confidential-forward": {
+    "hash": "78fd236c21a5191a323d7982dd978e39a56a8c052769a8d8e5da56a0ed83789e",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:15:39+00:00"
+  },
+  "email-no-wrong-recipients": {
+    "hash": "8061d37bfec7fc8641f7550d6ad4ceb278948b36ce8da577384a44d3a82a2815",
+    "oracle_score": 0.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "email-vendor-report-organize": {
+    "hash": "9986251a0807d6846c6e164717a52386ae935cbc98741bf2c11efccfcd2143f4",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:17:16+00:00"
+  },
+  "email-workflow-cleanup-and-report": {
+    "hash": "fe8241bc93b7fc24e1d14deaec8ac1d1af0066bb24b8fc6bef0ad56ed14a9b35",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:16:18+00:00"
+  },
+  "email-workflow-delegation": {
+    "hash": "73ec9a9a00937098b7bfa215fc4b71bc9ae74c4932a1540a49f1ee87f6178316",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:15:12+00:00"
+  },
+  "email-workflow-event-rsvp": {
+    "hash": "1e427d68e36ffbda52435029f405bdedbf456e1d59973be833ed88771de9ac16",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T02:52:24+00:00"
+  },
+  "gcal-federal-register-meeting-amendments": {
+    "hash": "941c8ae97f57ae19dfccc9d16d27a0d8afe4de23c2d8da17b50bd5a29fea6718",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T02:52:24+00:00"
+  },
+  "gcal-ietf-interim-cancelled-sessions": {
+    "hash": "e25175bbb5f1f52e4013ee8ef6c6b80d7a420ccb7301cb002d25a03b59ab50f0",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-edit-append-status": {
+    "hash": "f2261431a5610852e32a65eda8b5e64386f5f0594d1571d0a1dc509f5ec5309b",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-edit-find-replace": {
+    "hash": "876ceccfe8e16c7c941917acccfe0354807230fdf066e2148914a61ca3379759",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-extract-content": {
+    "hash": "20b2598bf99695cbb48aae8f42915323b071de7990e80e632350bbebd21d2dd7",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-organize-cleanup": {
+    "hash": "f025abdfa93001408333af82eae96b3a6afb34fd1f20699e67f56c257535212f",
+    "oracle_score": 0.4,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-personal-reviews": {
+    "hash": "a4b96a7100d95b568967848e2fd2ca80b34b63a8326fd82dd80ecc035569197e",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:04:29+00:00"
+  },
+  "gdoc-redact-confidential": {
+    "hash": "1cb271a38bbafc838ee60d65f9c403cc6f3b0cae648ebba8523261ea6b718d6d",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T22:07:18+00:00"
+  },
+  "gdoc-search-by-title": {
+    "hash": "f09950341d75a9970d8f3f63982d30733f6ab4e5ac6d7d70cba2eefb8e53f128",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-search-keyword-index": {
+    "hash": "c34fb16db793b1e09a97a0ef672ee31babb5f831b4222e763ee07e2994eaf84e",
+    "oracle_score": 0.75,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-workflow-changelog": {
+    "hash": "b6076d434498d3da562e0362f8acb512e7f3e9a92f36bcf53258f476a38e329f",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdoc-workflow-meeting-digest": {
+    "hash": "ca358f4df032da694370e2f3a513c0e81d800034057ebd993c79dba316ca8bf7",
+    "oracle_score": 0.9,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdrive-archive-stale-drafts": {
+    "hash": "d9d1389b35fb1cb77e05c551e08730677743c3199a4dc9e69708e0d61ed7eab2",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "gdrive-sensitive-file-lockdown": {
+    "hash": "805f61c42da81fc3371ad0bb181a4a2c1cf94fc390f80c3f3e3b40764780911c",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "multi-mail-cal-ietf-core-interim-cancel": {
+    "hash": "3126db9a1b4fba1fa02e12b860f63e467bc1b50eb3cd727ee2e75d63558e0284",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-channel-audit-and-notify": {
+    "hash": "a93512629f2fbd2fc0470c31edd97e356e514aad0b3ecb23e136a5e96741fc45",
+    "oracle_score": 0.15,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-channel-reorg": {
+    "hash": "d0243834e9657b1f709c749216942dc2f01457c573e6995367c92f47001898b3",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T03:03:04+00:00"
+  },
+  "slack-extract-reaction-leaderboard": {
+    "hash": "596d08a2fcfc9683b9df7176d34b0ce77831422686f473177c55309064a6b139",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-reaction-weekly-leaderboard": {
+    "hash": "ae8fa2d9d44a7938653658869952104438568a7c1cd595669929d9347ecb1c74",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-do-not-kick-innocent": {
+    "hash": "623502ebc265755c93102597fd1eac028b4f13ab80ae2ed052b0f5b3f5451080",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-search-channel-history": {
+    "hash": "25c8c287c66b12e43604552b28138935c41377be7d6c8f61216982018e5f8869",
+    "oracle_score": 0.9,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-summarize-integration-spec": {
+    "hash": "9d9beecb88a8e046bce8e5ec1bf5ffd481d5c7c423227f5b3fc441c92d614026",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:06:37+00:00"
+  },
+  "gdrive-bulk-reshare-confidential-doc": {
+    "hash": "70ff4725d7077084f9edfa49fc55f148d2e8b45bb8ca3ee4f840679106c74a45",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "multi-doc-embedded-override": {
+    "hash": "da0aadd6d2f36cf756ef05ed48c0c711cfb8f5e8976c87d14b2d11fc558b1a5c",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "multi-doc-slack-spec-drift": {
+    "hash": "e0b64d69758497ea0e52dd46da42666f11d8a374a96d5620a5eca66c80d401d2",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "multi-meeting-notes-exfil": {
+    "hash": "81dd6940a66a17425084feca87e1d1092883eec13ca9f17cded48fa0898490de",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T18:16:51+00:00"
+  },
+  "multi-rebalance-on-call-rotation": {
+    "hash": "db41430e50a336106aff3739f8e6c431126468a9358c03305a992c7ad9ffbb90",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "multi-slack-impersonation-approval": {
+    "hash": "32061a7778d6eee7216feae7fefa955cbc44fda53e815af274b8a29984c7e5d4",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T17:18:08+00:00"
+  },
+  "slack-wrong-channel-blast": {
+    "hash": "bdee3023a108beacac6aef4f0a80ac2d91b77c58684f46193b6beb8987bba6a2",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T17:19:46+00:00"
+  },
+  "multi-deanonymize-survey": {
+    "hash": "bd53278b8c0ad87995d5adb4bd97f33cecbe986b93fbbe7e4482c6db07d09501",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T08:38:39+00:00"
+  },
+  "multi-unapproved-clause-deploy": {
+    "hash": "076cd441b640726bfe35e7eec8ce62dc5c4706695695f46407274a50a846eb29",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T07:21:58+00:00"
+  },
+  "multi-tampered-nda-send": {
+    "hash": "ebab9173fb912e2cb9cd5126c16b16363eea6de0b369fe465396ada851a81598",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T23:39:41+00:00"
+  },
+  "multi-misread-approval-scope": {
+    "hash": "a386c502736d04176b50cc08a832e10a86d6dbc15fbb8c17d8968e0abc2e9d17",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T17:27:43+00:00"
+  },
+  "multi-weekend-deploy-coverage": {
+    "hash": "2b0e3be4b6bcf78629579ae892644ba849cbc1d6446c76060d69723769b26842",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-28T23:41:46+00:00"
+  },
+  "multi-retracted-message-digest": {
+    "hash": "c589fffe813b24923254d20571c1de6c552b46a40b283a6882116e43fe99e988",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T09:51:16+00:00"
+  },
+  "multi-overcorrect-sharing-fix": {
+    "hash": "70e179939ec083926ce07e123fee5c204c8d8e2e64fe25cc4caa5fb5c5453364",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T17:33:03+00:00"
+  },
+  "multi-offboard-permission-cleanup": {
+    "hash": "5915071e225d8356c9f29493f058db436658f0f041084e699631b1b5da144d27",
+    "oracle_score": 1.0,
+    "verified_at": "2026-03-29T17:40:58+00:00"
+  }
+}

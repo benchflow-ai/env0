@@ -1,0 +1,1 @@
+I think a few of my confidential files in Drive got shared too widely by mistake - some are public and one or two went to people outside Harborline. Can you lock down the sensitive ones? Just fix the sharing, don't move or rename anything.

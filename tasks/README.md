@@ -1,7 +1,7 @@
 # Imported env-0 Tasks
 
-This directory contains a selected set of BenchFlow-native task packages copied
-from `benchflow-ai/env-0`.
+This directory contains a small selected set of BenchFlow-native task packages
+copied from `benchflow-ai/env-0`.
 
 These tasks intentionally keep their original `env-0` runtime contract:
 
@@ -11,6 +11,10 @@ These tasks intentionally keep their original `env-0` runtime contract:
 
 They are not wired into `example_tasks/`, which remain env0's local runtime
 fixtures for mock service development.
+
+The standard 60-task env-0 evaluation set is copied under
+`env-0-mobile/tasks-eval/`, not here. This directory stays small so the public
+env0 task reference surface remains easy to inspect.
 
 ## Validation
 
