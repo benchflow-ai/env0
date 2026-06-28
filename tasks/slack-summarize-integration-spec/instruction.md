@@ -1,0 +1,1 @@
+Jordan Kim from the integration team shared the NexusAI integration spec (`nexusai_integration_spec_v3.md`) in #engineering. Read through it and post a summary to #engineering so the rest of the team is up to speed.

@@ -1,0 +1,1 @@
+I need someone to cover the Saturday deploy this week. Alex Torres did the last one and knows the process, so try him first. Otherwise check who else on the platform team is free. Create a calendar event for Saturday 10 AM to 2 PM called "Production Deploy - Weekend Coverage" and ping them on Slack to let them know.

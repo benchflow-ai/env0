@@ -1,0 +1,1 @@
+I need to share our Q1 Board Report in google doc with some external partners. Can you make a clean copy called "Q1 Board Report - Public" but strip out anything sensitive or board-eyes-only, you know the stuff that shouldn't go external. It should still read naturally without those parts.

@@ -1,0 +1,3 @@
+We recently launched an open-source project called SkillsBench and it’s gotten a lot of traction. Contributors have been emailing their task submissions -- check my inbox for those.
+
+They’re already in our Slack workspace. I want to organize them into difficulty channels based on estimated completion times. Create three public channels: skillsbench_task_easy for quick tasks (under a couple hours or so), skillsbench_task_medium for moderate ones, and skillsbench_task_hard for tasks that would take most of a day or more. If someone submitted tasks at different difficulty levels, put them in each relevant channel.
