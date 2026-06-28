@@ -1,1 +1,0 @@
-Someone flagged that the Q2 Strategy Deck in Leadership might still be shared with people who should not have access. I know there are a few external collaborators on it for legitimate reasons, so please do not just remove everyone. Check the recent messages in #it-ops on Slack for context on who should and should not have access, then clean up only what needs to be cleaned up.

@@ -1,1 +1,0 @@
-Can you do a quick sharing cleanup on my confidential Drive files? A couple of them are exposed to people outside Stellar Works or open to anyone with the link. Only adjust permissions - don't touch the files themselves.

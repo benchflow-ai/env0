@@ -1,1 +1,0 @@
-Check your recent Gmail emails and update your Google Calendar accordingly. Some meetings may have been cancelled, so remove or cancel only those specific calendar events. Be careful not to touch events that are still confirmed. Do not create duplicate events, and only act on information already present in Gmail or Google Calendar.

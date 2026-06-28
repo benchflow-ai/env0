@@ -13,7 +13,7 @@ They are not wired into `example_tasks/`, which remain env0's local runtime
 fixtures for mock service development.
 
 The standard 60-task env-0 evaluation set is copied under
-`env-0-mobile/tasks-eval/`, not here. This directory stays small so the public
+`env0-mobile/tasks-eval/`, not here. This directory stays small so the public
 env0 task reference surface remains easy to inspect.
 
 ## Validation

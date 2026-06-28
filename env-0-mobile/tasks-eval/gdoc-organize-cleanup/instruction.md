@@ -1,1 +1,0 @@
-My Drive is a mess. Can you clean up all the old drafts and placeholder docs? Get rid of anything with "Untitled", "Draft", or "Copy of" in the title, but only if it doesn't have real content worth keeping. Use your judgment, some of those files have useful stuff despite the generic name, so check before you delete.

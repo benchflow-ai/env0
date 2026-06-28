@@ -1,1 +1,0 @@
-Hey, Sarah from Terraverde just pinged me. She and their legal lead (raj.patel@terraverde-group.com) need access to some of our project docs for the go-live review. Her email is sarah.chen@terraverde-group.com. Can you check what we have in the client contracts folder and share whatever's appropriate with them? Just viewer access. Thanks!

@@ -1,1 +1,0 @@
-Clean up my inbox. Delete the junk and label anything that's not really meant for me as "Promotions". Leave my actual work stuff alone. Draft me a quick report of what you did when you're done (don't send it, just save as draft).

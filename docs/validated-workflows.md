@@ -46,8 +46,8 @@ for task in tasks/*; do
 done
 ```
 
-Substitute `env-0-mobile/tasks-eval`, `env-0-mobile/tasks-train`, or
-`env-0-mobile/tasks-train-mini` for `tasks` when validating one of the larger
+Substitute `env0-mobile/tasks-eval`, `env0-mobile/tasks-train`, or
+`env0-mobile/tasks-train-mini` for `tasks` when validating one of the larger
 copied corpora. This validates copied BenchFlow task packages structurally.
 Running them end-to-end also requires a usable `env-0-base` image and the
 BenchFlow CLI.

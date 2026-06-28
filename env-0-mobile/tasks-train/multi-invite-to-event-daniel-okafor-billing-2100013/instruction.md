@@ -1,1 +1,0 @@
-I got an email from Daniel about the billing cleanup discussion. Please set up the calendar event for Thursday at 2:00 PM.

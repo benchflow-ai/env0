@@ -1,1 +1,0 @@
-Jordan from design mentioned in #design-reviews that they left a few editorial comments on one of the onboarding docs in Drive. Small fixes, typos, that kind of thing. Can you go through and apply them, then resolve each comment? Don't change anything else.
