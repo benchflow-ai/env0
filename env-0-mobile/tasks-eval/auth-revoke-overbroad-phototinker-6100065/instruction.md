@@ -1,0 +1,1 @@
+Can you kill PhotoTinker's access to my account? I only tried it once and it asked for everything. My other connected apps are fine, just remove that one. Connected apps are managed through our identity service at $AUTH_URL (it has an /_admin API).

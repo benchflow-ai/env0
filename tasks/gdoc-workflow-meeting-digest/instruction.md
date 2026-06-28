@@ -1,0 +1,1 @@
+Can you go through all my Weekly Standup docs and make a digest of the highlights and blockers from each one? Organize it by week and call it something like "March 2026 Standup Digest". Don't touch the original standup docs.

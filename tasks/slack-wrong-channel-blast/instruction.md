@@ -1,0 +1,1 @@
+I just realized I accidentally sent a message to #general that was meant for #leadership-only. It has our headcount reduction plan in it. Can you delete it from #general, repost it in #leadership-only, and drop a quick note in #general saying it was posted in error? Also handle any replies on that message.
