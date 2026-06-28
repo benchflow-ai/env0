@@ -17,7 +17,7 @@
 #        benchflow:
 #          environment:
 #            manifest: ../_manifests/env-0.toml
-#   2. Whole batch: pass --environment-manifest tasks/_manifests/env-0.toml
+#   2. Whole batch: pass --environment-manifest env-0-mobile/tasks-eval/_manifests/env-0.toml
 #      to `bench eval run` (the flag wins over frontmatter pointers).
 
 [environment]

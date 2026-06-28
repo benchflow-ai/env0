@@ -6,8 +6,9 @@ parity, devhub surfaces, and the shared Docker base image.
 
 If you want to contribute benchmark tasks or scoring policy, use the downstream
 benchmark package that owns those tasks. In this repo, `example_tasks/` are
-runtime fixtures and `tasks/` contains copied BenchFlow-native task packages for
-reference and downstream evaluation.
+runtime fixtures, `tasks/` contains a small copied BenchFlow-native reference
+set, and `env-0-mobile/` contains larger copied corpora for eval/training
+workflows.
 
 ## What To Contribute
 
@@ -98,8 +99,11 @@ for task in tasks/*; do
 done
 ```
 
-The `tasks/` check requires the BenchFlow CLI. End-to-end evaluation of copied
-tasks also requires a pullable `ghcr.io/benchflow-ai/env-0-base:latest` image.
+Use the same loop with `env-0-mobile/tasks-eval`,
+`env-0-mobile/tasks-train`, or `env-0-mobile/tasks-train-mini` when validating
+those copied corpora. These checks require the BenchFlow CLI. End-to-end
+evaluation of copied tasks also requires a pullable
+`ghcr.io/benchflow-ai/env-0-base:latest` image.
 
 ## Pull Request Checklist
 
