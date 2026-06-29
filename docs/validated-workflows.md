@@ -25,6 +25,11 @@ PULL_BASE=0 scripts/smoke_docker_examples.sh
 by `docker/build-base.sh`. Use the default pull behavior only after a maintainer
 has pushed `ghcr.io/benchflow-ai/env0:<VERSION>`.
 
+Maintainers can publish the release image with the `Publish Base Image` GitHub
+Actions workflow. The workflow uses the repository `GITHUB_TOKEN` with
+`packages: write`, pushes `ghcr.io/benchflow-ai/env0:<VERSION>` and `latest`,
+and verifies a remote pull before completing.
+
 ## One Environment Package
 
 ```bash
