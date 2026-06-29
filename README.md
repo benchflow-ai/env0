@@ -1,5 +1,7 @@
 # env0
 
+[![CI](https://github.com/benchflow-ai/env0/actions/workflows/ci.yml/badge.svg)](https://github.com/benchflow-ai/env0/actions/workflows/ci.yml)
+
 env0 is the first-party mock-environment runtime for agent testing. It provides
 stateful, deterministic mock services for local development, seed contracts,
 API-parity checks, dev tooling, and a shared Docker base image.
@@ -146,6 +148,8 @@ still contain small service maps and must be kept in sync when adding services.
 - [API validation playbook](docs/api-validation-playbook.md)
 - [Parity audit](docs/parity-audit/README.md)
 - [Validated workflows](docs/validated-workflows.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
 
 ## Example Tasks
 

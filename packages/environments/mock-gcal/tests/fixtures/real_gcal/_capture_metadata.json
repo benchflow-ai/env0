@@ -1,6 +1,6 @@
 {
   "captured_at": "2026-03-27T21:09:20.042853+00:00",
-  "account": "mediar.acc1@gmail.com",
+  "account": "fixture-user@example.com",
   "api_version": "v3",
   "api_base": "https://www.googleapis.com/calendar/v3",
   "auth_method": "google-workspace-cli (gws auth login)",

@@ -16,7 +16,7 @@
 set -euo pipefail
 
 BASE="${SLACK_URL:-http://localhost:9002}"
-BOT="Authorization: Bearer ${SLACK_BOT_TOKEN:-xoxb-mock-bot-token}"
+BOT="Authorization: Bearer ${SLACK_BOT_TOKEN:-mock-bot-token}"
 WS="X-Mock-Slack-Workspace: workspace_001"
 
 # ---------------------------------------------------------------------------

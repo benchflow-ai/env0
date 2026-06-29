@@ -5,7 +5,7 @@ SLACK="${SLACK_URL:-http://localhost:9002}"
 DRIVE="${DRIVE_URL:-http://localhost:9005}"
 
 # 1. Read Slack #it-ops to understand the situation
-AUTH="Authorization: Bearer xoxb-test"
+AUTH="Authorization: Bearer mock-bot-token"
 ITOPS_ID=$(curl -s -H "$AUTH" "$SLACK/api/conversations.list" | python3 -c "
 import json, sys
 data = json.load(sys.stdin)

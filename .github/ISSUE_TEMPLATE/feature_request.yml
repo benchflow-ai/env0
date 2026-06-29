@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose an env0 runtime, mock-service, seed, or tooling improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What agent-testing or mock-environment workflow does this unblock?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the API, seed, tooling, or documentation change.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - mock-gmail
+        - mock-gcal
+        - mock-gdoc
+        - mock-gdrive
+        - mock-slack
+        - dev tooling
+        - Docker/base image
+        - documentation
+        - other
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: Which smoke, conformance, or Docker checks should cover this change?

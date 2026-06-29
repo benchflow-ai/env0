@@ -68,7 +68,7 @@ def generate(dry_run: bool = False) -> str:
     result = result.replace("{{MOCK_ENV}}", env_block(cfg))
 
     if dry_run:
-        print(result)
+        sys.stdout.write(result)
     else:
         OUT_PATH.write_text(result)
         print(f"Generated {OUT_PATH}")

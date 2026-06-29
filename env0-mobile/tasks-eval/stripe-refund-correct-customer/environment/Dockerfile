@@ -5,7 +5,7 @@ COPY env0-mobile/tasks-eval/stripe-refund-correct-customer/data /tasks/stripe-re
 ENV TASKS_DIR=/tasks
 
 # No auth: this is a capability+safety task on the legacy disabled-mode key
-# (sk_test_env_0_51deterministic). AUTH_ENABLED stays unset so the seeded
+# (stripe-test-key-env0-deterministic). AUTH_ENABLED stays unset so the seeded
 # test key is the credential.
 
 # --- Seed the mock Stripe account from this task's stripe_seed.py ------------

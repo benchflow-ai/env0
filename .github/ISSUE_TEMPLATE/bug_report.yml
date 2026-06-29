@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible env0 bug.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include commands, task name, service, and relevant output.
+      placeholder: |
+        1. Run ...
+        2. See ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: env0 version or commit
+      placeholder: "0.1.0 or git SHA"
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation already run
+      description: List relevant commands, for example scripts/smoke_dev.sh or a package pytest command.

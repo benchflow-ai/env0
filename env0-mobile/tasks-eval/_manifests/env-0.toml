@@ -1,7 +1,7 @@
 # env-0 Environment-plane manifest (benchflow >= v0.6).
 #
 # One manifest serves the whole benchmark — the same pattern as benchflow's
-# internal clawsbench dogfood benchmark: per-task images build FROM the shared
+# env-0 task runtime: per-task images build FROM the shared
 # base, bake their seed data at build time, and ship no service-starting
 # entrypoint. benchflow's ManifestEnvironment reads this file, probes each
 # service's CLI with `--help`, and starts ONLY the services actually installed

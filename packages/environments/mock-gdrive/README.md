@@ -14,10 +14,10 @@ Mock GDrive provides a safe, fully stateful Drive environment where agents can b
 - **Full search query parser** — `lark`-based PEG grammar supporting `and`, `or`, `not`, `contains`, `in parents`, datetime comparisons, parenthetical grouping, `fullText contains`, and property queries
 - **Stateful SQLite backend** — 8 ORM models (User, File, Permission, Comment, Reply, Revision, Change, Drive), 37 File columns, 43 file capability flags, 21 drive capability flags
 - **Snapshot/restore** — save and reset DB state for deterministic evaluation runs
-- **12 golden fixtures** captured from a real Google Drive account with 33 conformance tests validating response shapes match real Drive + 25 golden fixture tests
+- **42 golden fixtures** captured from the real Google Drive API with conformance tests validating response shapes match Drive behavior
 - **`fields` parameter** — matches real API default behavior: `files.list` returns only `{kind, id, name, mimeType}` without `fields`; `files.get` returns full resource
 - **Web UI** — file browser with folder navigation, detail view, user switching
-- **211 tests** covering all endpoints, query parser, capabilities, conformance, and golden fixtures
+- **275 tests** covering endpoints, query parser, capabilities, conformance, schemas, and golden fixtures
 
 ## Quick start
 
@@ -141,20 +141,20 @@ The current user determines file visibility, permissions, and capabilities.
 uv run --extra dev pytest tests -q
 ```
 
-| Suite | Tests | What it covers |
-|-------|-------|----------------|
-| `test_files.py` | 43 | Files CRUD, search, ordering, trash, copy, export, upload |
-| `test_conformance.py` | 33 | Response shape validation against Drive API Discovery Document |
-| `test_golden_fixtures.py` | 25 | Mock responses vs 12 real Drive API captures |
-| `test_drives.py` | 23 | Shared drives CRUD, hide/unhide, pagination, query |
-| `test_query_parser.py` | 18 | All query operators: `=`, `!=`, `<`, `>`, `contains`, `in`, `and`, `or`, `not` |
-| `test_permissions.py` | 15 | Permissions CRUD, transfer ownership, visibility scoping |
-| `test_comments.py` | 15 | Comments + replies CRUD, resolve/reopen, deleted handling |
-| `test_capabilities.py` | 12 | 43 capability flags computed from role/ownership |
-| `test_fields.py` | 12 | `fields` parameter parsing, default behavior, nested selection |
-| `test_revisions.py` | 7 | Revisions CRUD, publishing flags |
-| `test_changes.py` | 6 | Changes feed, startPageToken, channels.stop |
-| `test_about.py` | 2 | About endpoint, storage quota |
+| Suite | What it covers |
+|-------|----------------|
+| `test_conformance.py` | Response-shape validation against real Drive fixtures and schema contracts |
+| `test_schema.py` | Endpoint response-shape smoke coverage |
+| `test_files.py` | Files CRUD, search, ordering, trash, copy, export, upload |
+| `test_drives.py` | Shared drives CRUD, hide/unhide, pagination, query |
+| `test_query_parser.py` | Query operators: `=`, `!=`, `<`, `>`, `contains`, `in`, `and`, `or`, `not` |
+| `test_permissions.py` | Permissions CRUD, transfer ownership, visibility scoping |
+| `test_comments.py` | Comments + replies CRUD, resolve/reopen, deleted handling |
+| `test_capabilities.py` | Capability flags computed from role/ownership |
+| `test_fields.py` | `fields` parameter parsing, default behavior, nested selection |
+| `test_revisions.py` | Revisions CRUD, publishing flags |
+| `test_changes.py` | Changes feed, startPageToken, channels.stop |
+| `test_about.py` | About endpoint, storage quota |
 
 ## Fidelity
 
@@ -181,7 +181,7 @@ packages/environments/mock-gdrive/
 │   └── server.py         # Uvicorn server setup
 ├── tests/
 │   ├── fixtures/         # Golden fixtures from real Drive + Discovery Document
-│   └── test_*.py         # 211 tests
+│   └── test_*.py         # 275 tests
 ├── scripts/              # Drive auth + fixture capture from real account
 ├── API_NOTES.md          # Ground truth, quirks, simplifications, design choices
 └── pyproject.toml

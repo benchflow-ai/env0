@@ -1,4 +1,4 @@
 {
-  "bot_token": "xoxb-YOUR-BOT-TOKEN-HERE",
-  "user_token": "xoxp-YOUR-USER-TOKEN-HERE"
+  "bot_token": "replace-with-bot-token",
+  "user_token": "replace-with-user-token"
 }

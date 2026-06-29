@@ -2,7 +2,7 @@
 
 Discovered by ``env_0_stripe.seed.generator`` because this file exists at
 ``tasks/<name>/data/stripe_seed.py`` and exposes ``seed(db, rng, fake) -> dict``.
-The default ``sk_test_env_0_51deterministic`` API key is seeded by the generator
+The default ``stripe-test-key-env0-deterministic`` API key is seeded by the generator
 before this runs.
 
 What it builds (all amounts in cents):
