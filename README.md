@@ -90,6 +90,10 @@ has package-write permission:
 docker/build-base.sh --push
 ```
 
+Maintainers can also publish from GitHub Actions via the `Publish Base Image`
+workflow. It builds from `VERSION`, pushes both `<VERSION>` and `latest`, and
+verifies a remote pull.
+
 Release checklist:
 
 1. Bump `VERSION` if the base image contract changed.
@@ -97,7 +101,8 @@ Release checklist:
 3. Run changed env tests, for example `cd packages/environments/mock-gdrive && uv run --extra dev pytest tests -q`.
 4. Build locally with `docker/build-base.sh`.
 5. Run `PULL_BASE=0 scripts/smoke_docker_examples.sh`.
-6. Push with `docker/build-base.sh --push` if package permissions are configured.
+6. Push with `docker/build-base.sh --push` if package permissions are configured,
+   or run the `Publish Base Image` workflow.
 7. Validate remote pull with `docker pull ghcr.io/benchflow-ai/env0:$(cat VERSION)` only after the push succeeds.
 
 ## Repo Layout
