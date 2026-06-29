@@ -18,7 +18,7 @@
       ],
       "created": "2026-03-27T21:09:05.000Z",
       "creator": {
-        "email": "mediar.acc1@gmail.com",
+        "email": "fixture-user@example.com",
         "self": true
       },
       "description": "Fixture test event with all optional fields",
@@ -34,7 +34,7 @@
       "kind": "calendar#event",
       "location": "Conference Room A",
       "organizer": {
-        "email": "mediar.acc1@gmail.com",
+        "email": "fixture-user@example.com",
         "self": true
       },
       "reminders": {
@@ -51,7 +51,7 @@
     }
   ],
   "kind": "calendar#events",
-  "summary": "mediar.acc1@gmail.com",
+  "summary": "fixture-user@example.com",
   "timeZone": "UTC",
   "updated": "2026-03-27T21:09:05.433Z",
   "_captured_at": "2026-03-27T21:09:05.757693+00:00"

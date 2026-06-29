@@ -14,7 +14,7 @@
         "files_list_in_parents.json"
       ],
       "tests": [
-        "test_golden_fixtures.py::TestFilesListGolden",
+        "test_conformance.py",
         "test_files.py"
       ]
     },
@@ -30,7 +30,7 @@
         "files_get_fields_filtered.json"
       ],
       "tests": [
-        "test_golden_fixtures.py::TestFilesGetGolden",
+        "test_conformance.py",
         "test_files.py"
       ]
     },
@@ -130,7 +130,7 @@
       "implemented": true,
       "fixture": "permissions_list.json",
       "tests": [
-        "test_golden_fixtures.py::TestPermissionsGolden",
+        "test_conformance.py",
         "test_permissions.py"
       ]
     },
@@ -142,7 +142,7 @@
       "implemented": true,
       "fixture": "permissions_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestPermissionsGolden",
+        "test_conformance.py",
         "test_permissions.py"
       ]
     },
@@ -190,7 +190,7 @@
         "comments_list_empty.json"
       ],
       "tests": [
-        "test_golden_fixtures.py::TestCommentsGolden",
+        "test_conformance.py",
         "test_comments.py"
       ]
     },
@@ -202,7 +202,7 @@
       "implemented": true,
       "fixture": "comments_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestCommentsGolden",
+        "test_conformance.py",
         "test_comments.py"
       ]
     },
@@ -247,7 +247,7 @@
       "implemented": true,
       "fixture": "replies_list.json",
       "tests": [
-        "test_golden_fixtures.py::TestRepliesGolden",
+        "test_conformance.py",
         "test_comments.py"
       ]
     },
@@ -259,7 +259,7 @@
       "implemented": true,
       "fixture": "replies_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestRepliesGolden",
+        "test_conformance.py",
         "test_comments.py"
       ]
     },
@@ -304,7 +304,7 @@
       "implemented": true,
       "fixture": "revisions_list.json",
       "tests": [
-        "test_golden_fixtures.py::TestRevisionsGolden",
+        "test_conformance.py",
         "test_revisions.py"
       ]
     },
@@ -316,7 +316,7 @@
       "implemented": true,
       "fixture": "revisions_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestRevisionsGolden",
+        "test_conformance.py",
         "test_revisions.py"
       ]
     },
@@ -350,7 +350,7 @@
       "implemented": true,
       "fixture": "changes_startPageToken.json",
       "tests": [
-        "test_golden_fixtures.py::TestChangesGolden",
+        "test_conformance.py",
         "test_changes.py"
       ]
     },
@@ -365,7 +365,7 @@
         "changes_list_empty.json"
       ],
       "tests": [
-        "test_golden_fixtures.py::TestChangesGolden",
+        "test_conformance.py",
         "test_changes.py"
       ]
     },
@@ -388,7 +388,7 @@
       "implemented": true,
       "fixture": "channels_stop_response.json",
       "tests": [
-        "test_golden_fixtures.py::TestChannelsGolden"
+        "test_conformance.py"
       ]
     },
     {
@@ -399,7 +399,7 @@
       "implemented": true,
       "fixture": "drives_list.json",
       "tests": [
-        "test_golden_fixtures.py::TestDrivesGolden",
+        "test_conformance.py",
         "test_drives.py"
       ]
     },
@@ -411,7 +411,7 @@
       "implemented": true,
       "fixture": "drives_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestDrivesGolden",
+        "test_conformance.py",
         "test_drives.py"
       ]
     },
@@ -478,7 +478,7 @@
       "implemented": true,
       "fixture": "about_get.json",
       "tests": [
-        "test_golden_fixtures.py::TestAboutGolden",
+        "test_conformance.py",
         "test_about.py"
       ]
     },

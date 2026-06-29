@@ -30,7 +30,7 @@
         },
         {
           "name": "To",
-          "value": "mediar.acc1@gmail.com"
+          "value": "fixture-user@example.com"
         },
         {
           "name": "Subject",
@@ -46,7 +46,7 @@
         },
         {
           "name": "From",
-          "value": "mediar.acc1@gmail.com"
+          "value": "fixture-user@example.com"
         }
       ],
       "body": {

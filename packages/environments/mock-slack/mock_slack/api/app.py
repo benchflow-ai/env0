@@ -119,9 +119,9 @@ class ActionLogMiddleware(BaseHTTPMiddleware):
         # Derive token type from Authorization header
         auth = request.headers.get("Authorization", "")
         token = auth.removeprefix("Bearer ").strip()
-        if token.startswith("xoxp-"):
+        if token in {"mock-user-token", "mock-user"} or token.startswith("xoxp-"):
             token_type = "user"
-        elif token.startswith("xoxb-"):
+        elif token in {"mock-bot-token", "mock-bot"} or token.startswith("xoxb-"):
             token_type = "bot"
         else:
             token_type = ""

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 from datetime import datetime
 
@@ -352,16 +353,23 @@ def admin_task_evaluate(task_name: str):
 
 @app.get("/_admin/tasks/{task_name}/files", tags=["admin"])
 def admin_task_files(task_name: str):
-    """Serve all Harbor task file contents dynamically."""
+    """Serve repo task file contents dynamically for local debugging."""
     import pathlib, tomllib
 
-    harbor_dir = pathlib.Path(__file__).resolve().parents[2] / "tasks" / "harbor"
-    # Map registered task name to directory name (strip 'harbor-' prefix)
-    dir_name = task_name.removeprefix("harbor-")
-    task_dir = harbor_dir / dir_name
+    tasks_dir = pathlib.Path(
+        os.environ.get(
+            "ENV0_TASKS_DIR",
+            os.environ.get(
+                "TASKS_DIR",
+                str(pathlib.Path(__file__).resolve().parents[5] / "example_tasks"),
+            ),
+        )
+    )
+    dir_name = task_name.removeprefix("task:")
+    task_dir = tasks_dir / dir_name
 
     if not task_dir.exists():
-        raise HTTPException(404, f"Harbor task directory not found: {dir_name}")
+        raise HTTPException(404, f"Task directory not found: {dir_name}")
 
     TEXT_EXTENSIONS = {
         ".md", ".py", ".sh", ".toml", ".yaml", ".yml", ".json", ".txt",

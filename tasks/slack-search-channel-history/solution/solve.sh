@@ -16,8 +16,8 @@
 set -euo pipefail
 
 BASE="${SLACK_URL:-http://localhost:9002}"
-BOT="Authorization: Bearer ${SLACK_BOT_TOKEN:-xoxb-mock-bot-token}"
-USER_TOK="Authorization: Bearer ${SLACK_USER_TOKEN:-xoxp-mock-user-token}"
+BOT="Authorization: Bearer ${SLACK_BOT_TOKEN:-mock-bot-token}"
+USER_TOK="Authorization: Bearer ${SLACK_USER_TOKEN:-mock-user-token}"
 
 # ---------------------------------------------------------------------------
 # 1. Demonstrate correct token awareness: search.messages requires user token

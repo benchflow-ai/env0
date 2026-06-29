@@ -4,18 +4,19 @@ Historical source: initial parity audit generated 2026-03-27 by a 3-agent
 audit council.
 
 This file is kept as the initial env0 parity baseline. Notebook files have
-been ported into this directory with `mock-*` path/name updates, but should be
-rerun before treating their results as current gates.
+been ported into this directory with `mock-*` path/name updates, but the current
+release gate is the package conformance suites under
+`packages/environments/mock-*/tests/test_conformance.py`.
 
 ## Summary
 
-| Environment | Correctness | Completeness | Readability | Status |
-|-------------|-------------|--------------|-------------|--------|
-| mock-gmail | NEEDS FIX | MOSTLY COMPLETE | CLEAR | Needs refresh |
-| mock-gcal | PASS | MOSTLY COMPLETE | CLEAR | OK |
-| mock-gdoc | NEEDS FIX | COMPLETE | CLEAR | Needs refresh |
-| mock-gdrive | NEEDS FIX | INCOMPLETE | NEEDS POLISH | Needs refresh |
-| mock-slack | FAIL | MOSTLY COMPLETE | NEEDS POLISH | Needs refresh |
+| Environment | Current release gate | Fixture count | Notes |
+|-------------|----------------------|---------------|-------|
+| mock-gmail | `uv run --extra dev pytest tests/test_conformance.py -q` | 35 | Current conformance suite passes. |
+| mock-gcal | `uv run --extra dev pytest tests/test_conformance.py -q` | 31 | Current conformance suite passes. |
+| mock-gdoc | `uv run --extra dev pytest tests/test_conformance.py -q` | 6 | Current conformance suite passes with documented skips. |
+| mock-gdrive | `uv run --extra dev pytest tests/test_conformance.py -q` | 42 | Current conformance suite passes with documented skips. |
+| mock-slack | `uv run --extra dev pytest tests/test_conformance.py -q` | 57 | Current conformance suite passes with documented skips. |
 
 ## Initial Must-Fix Items
 
@@ -50,10 +51,10 @@ Current env0 real golden fixture count:
 - Slack: 57 fixtures
 - Total: 171 golden fixtures
 
-## env0 Refresh Needed
+## Maintenance Items
 
-- Verify all paths/names use current `mock-*` contracts.
-- Verify fixture coverage maps under each `packages/environments/mock-*`.
-- Add missing error response tests.
+- Keep fixture coverage maps under each `packages/environments/mock-*` in sync
+  with route additions.
+- Add missing error response tests when new error fixtures are captured.
 - Add pagination tests where APIs support pagination.
 - Re-run conformance suites after any fixture refresh.
