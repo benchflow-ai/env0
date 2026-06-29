@@ -12,5 +12,5 @@ RUN mkdir -p /logs/verifier /logs/agent /logs/artifacts
 RUN chown agent:agent /logs/agent /logs/artifacts
 
 # Mock Slack tokens for the agent
-ENV SLACK_BOT_TOKEN=xoxb-mock-bot-token
-ENV SLACK_USER_TOKEN=xoxp-mock-user-token
+ENV SLACK_BOT_TOKEN=mock-bot-token
+ENV SLACK_USER_TOKEN=mock-user-token

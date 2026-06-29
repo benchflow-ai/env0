@@ -3,7 +3,7 @@
 Discovered by ``env_0_stripe.seed.generator`` via
 ``--scenario task:stripe-refund-correct-customer`` (it looks for this file at
 ``<TASKS_DIR>/<task>/data/stripe_seed.py`` and calls ``seed(db, rng, fake)``).
-The default API key (``sk_test_env_0_51deterministic``) is already added by the
+The default API key (``stripe-test-key-env0-deterministic``) is already added by the
 scenario wrapper before ``seed`` runs — do NOT re-seed it here.
 
 This reuses the exact construction helpers the built-in ``default`` scenario

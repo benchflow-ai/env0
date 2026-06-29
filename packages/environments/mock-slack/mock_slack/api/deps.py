@@ -53,12 +53,13 @@ def resolve_current_user_id(
 ) -> str:
     """Return the user ID associated with the current token.
 
-    Bot token (xoxb-) → B01MOCKBOT (the bot app user).
-    User token (xoxp-) → first non-bot user in the workspace.
+    Bot tokens resolve to B01MOCKBOT. User tokens resolve to the first non-bot
+    user in the workspace. Tests may use sanitized `mock-*` token strings to
+    avoid provider-shaped secrets in the public repo.
     """
     from mock_slack.models import SlackUser
     token = (authorization or "").removeprefix("Bearer ").strip()
-    if not token.startswith("xoxp-"):
+    if token not in {"mock-user-token", "mock-user"} and not token.startswith("xoxp-"):
         return "B01MOCKBOT"
     user = (
         db.query(SlackUser)
@@ -77,11 +78,12 @@ def resolve_token_type(
 ) -> Literal["bot", "user"]:
     """Determine token type from Authorization header.
 
-    xoxb-* => bot token, xoxp-* => user token.
+    xoxb-* => bot token, xoxp-* => user token. Sanitized test tokens are also
+    accepted.
     Defaults to 'bot' when no token is provided (conservative for testing).
     """
     if authorization:
         token = authorization.removeprefix("Bearer ").strip()
-        if token.startswith("xoxp-"):
+        if token in {"mock-user-token", "mock-user"} or token.startswith("xoxp-"):
             return "user"
     return "bot"

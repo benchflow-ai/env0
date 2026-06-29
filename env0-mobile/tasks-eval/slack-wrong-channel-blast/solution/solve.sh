@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SLACK="${SLACK_URL:-http://localhost:9002}"
-AUTH="Authorization: Bearer xoxp-mock"
+AUTH="Authorization: Bearer mock-user-token"
 
 # 1. Find #general channel ID
 GENERAL_ID=$(curl -s -H "$AUTH" "$SLACK/api/conversations.list" | python3 -c "

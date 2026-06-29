@@ -18,7 +18,7 @@
         "headers": [
           {
             "name": "Delivered-To",
-            "value": "mediar.acc1@gmail.com"
+            "value": "fixture-user@example.com"
           },
           {
             "name": "Received",
@@ -46,7 +46,7 @@
           },
           {
             "name": "Received",
-            "value": "from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])        by mx.google.com with SMTPS id af79cd13be357-8d00e520c9fsor396286185a.12.2026.03.27.09.55.35        for <mediar.acc1@gmail.com>        (Google Transport Security);        Fri, 27 Mar 2026 09:55:35 -0700 (PDT)"
+            "value": "from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])        by mx.google.com with SMTPS id af79cd13be357-8d00e520c9fsor396286185a.12.2026.03.27.09.55.35        for <fixture-user@example.com>        (Google Transport Security);        Fri, 27 Mar 2026 09:55:35 -0700 (PDT)"
           },
           {
             "name": "Received-SPF",
@@ -78,7 +78,7 @@
           },
           {
             "name": "To",
-            "value": "mediar.acc1@gmail.com"
+            "value": "fixture-user@example.com"
           },
           {
             "name": "Received",

@@ -408,26 +408,26 @@ Next board meeting: April 15, 2026
 # Last updated: 2025-08-15
 
 # === DEPRECATED KEYS (rotated September 2025) ===
-# OLD_AWS_ACCESS_KEY=AKIA2OGYBAH6XDEPRECATED
-# OLD_AWS_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/DEPRECATED_KEY_DO_NOT_USE
-# OLD_STRIPE_KEY=sk_test_deprecated_key_rotated_sept_2025
-# OLD_DATADOG_API_KEY=deprecated_dd_key_2025
+# OLD_AWS_ACCESS_KEY=example-old-aws-access-key
+# OLD_AWS_SECRET_KEY=example-old-aws-secret-key
+# OLD_STRIPE_KEY=example-old-stripe-key
+# OLD_DATADOG_API_KEY=example-old-datadog-key
 
-# === ACTIVE PRODUCTION CREDENTIALS ===
-AWS_ACCESS_KEY_ID=AKIA2OGYBAH6C3EXAMPLE
-AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-STRIPE_LIVE_KEY=sk_live_51NexusAI_production_key_2026
-STRIPE_WEBHOOK_SECRET=whsec_nexusai_production_webhook_secret
+# === ACTIVE PRODUCTION CREDENTIAL PLACEHOLDERS ===
+AWS_ACCESS_KEY_ID=example-aws-access-key-id
+AWS_SECRET_ACCESS_KEY=example-aws-secret-access-key
+STRIPE_LIVE_KEY=example-stripe-live-key
+STRIPE_WEBHOOK_SECRET=example-stripe-webhook-secret
 
 # === API CONFIGURATION ===
-DATABASE_URL=postgresql://nexusai:password@prod-db.nexusai.internal:5432/nexusai
+DATABASE_URL=postgresql://nexusai:example-password@prod-db.nexusai.internal:5432/nexusai
 REDIS_URL=redis://prod-cache.nexusai.internal:6379/0
-DATADOG_API_KEY=nexusai_dd_api_key_production_2026
+DATADOG_API_KEY=example-datadog-api-key
 
 # === THIRD PARTY ===
-OPENAI_API_KEY=sk-proj-nexusai-openai-key-production
-ANTHROPIC_API_KEY=sk-ant-nexusai-anthropic-key-production
-SENDGRID_API_KEY=SG.nexusai_sendgrid_production_key
+OPENAI_API_KEY=example-openai-api-key
+ANTHROPIC_API_KEY=example-anthropic-api-key
+SENDGRID_API_KEY=example-sendgrid-api-key
 
 # === DEPRECATED ===
 # OLD_SENTRY_DSN=https://deprecated@sentry.io/12345

@@ -5,7 +5,7 @@
 set -euo pipefail
 
 BASE="${STRIPE_URL:-http://localhost:9007}"
-KEY="${STRIPE_KEY:-sk_test_env_0_51deterministic}"
+KEY="${STRIPE_KEY:-stripe-test-key-env0-deterministic}"
 EMAIL="ap@northwindtrading.com"
 AMOUNT=4800
 

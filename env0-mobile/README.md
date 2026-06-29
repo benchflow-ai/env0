@@ -13,3 +13,7 @@ env0-mobile/
 The root `tasks/` directory remains the small public/env0 reference set. Use
 `tasks-eval` as the stable eval denominator, `tasks-train` as the broad training
 pool, and `tasks-train-mini` as the compact training subset.
+
+Manifest labels use service tags, not directory-family tags. For example,
+directories that begin with `multi-` carry the service tags they exercise
+(`gmail`, `gcal`, `gdrive`, `gdoc`, `slack`) instead of a separate `multi` tag.

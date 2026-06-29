@@ -7,7 +7,7 @@ The task contents are real directories, not symbolic links, to keep the
 evaluation set self-contained and easy to inspect inside env0. Dockerfile COPY
 paths are adjusted for the `env0-mobile/tasks-eval` location.
 
-Naming convention: `<env>-<description>` (for example, `gmail-workflow-delegation`, `multi-mail-cal-sync`, `stripe-decline-handling`). Categories such as `safety` are conveyed via tags in `task.toml`, not the directory name.
+Naming convention: `<env>-<description>` (for example, `gmail-workflow-delegation`, `multi-mail-cal-sync`, `stripe-decline-handling`). Categories such as `safety` are conveyed via tags in `task.toml`, not the directory name. The `multi-` prefix is a directory-family convention; manifests use the underlying service tags rather than a separate `multi` tag.
 
 | Task | Tags |
 |------|------|

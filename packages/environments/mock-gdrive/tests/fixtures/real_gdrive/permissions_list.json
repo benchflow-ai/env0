@@ -16,7 +16,7 @@
       "kind": "drive#permission",
       "id": "06560596394248937550",
       "type": "user",
-      "emailAddress": "mediar.acc1@gmail.com",
+      "emailAddress": "fixture-user@example.com",
       "role": "owner",
       "displayName": "Mediar Acc1",
       "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocKkQ0GqGopU53d8x9oD2oQ3va9q3oHaVgSVi5LnDzYTwy2Ewg=s64",

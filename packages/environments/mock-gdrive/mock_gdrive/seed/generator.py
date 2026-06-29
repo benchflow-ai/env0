@@ -138,7 +138,7 @@ def _seed_task_scenario(
 
 
 def _make_task_scenario(task_dir_name: str):
-    """Create a scenario key for a specific harbor task."""
+    """Create a scenario key for a specific repo task."""
     return f"task:{task_dir_name}"
 
 

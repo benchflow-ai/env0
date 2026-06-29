@@ -86,8 +86,9 @@ The notebooks are included as starting points:
 - `gdrive-parity-audit.ipynb`
 - `slack-parity-audit.ipynb`
 
-Treat them as review artifacts until each one is rerun in the env0 repo.
-Before using a notebook as a gate, verify it:
+Treat them as historical review artifacts. The current release gate is the
+package conformance suite for each mock service. Before using a notebook as a
+gate, verify it:
 
 - load fixtures from `packages/environments/mock-*/tests/fixtures`
 - read `mock_coverage.json`

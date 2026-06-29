@@ -19,6 +19,10 @@ validation.
   conformance status.
 - [Validated workflows](validated-workflows.md) — commands that have been run
   against this checkout and the intended preconditions for heavier commands.
+- [Contributing](../CONTRIBUTING.md) — repo boundaries, validation matrix, and
+  pull request expectations.
+- [Security policy](../SECURITY.md) — private vulnerability reporting and
+  credential hygiene.
 
 ## Boundaries
 

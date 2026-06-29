@@ -18,11 +18,11 @@ from mock_slack.web import routes as web_routes
 WORKSPACE_HEADER = {"X-Mock-Slack-Workspace": "workspace_001"}
 USER_TOKEN_HEADER = {
     **WORKSPACE_HEADER,
-    "Authorization": "Bearer xoxp-mock-user-token",
+    "Authorization": "Bearer mock-user-token",
 }
 BOT_TOKEN_HEADER = {
     **WORKSPACE_HEADER,
-    "Authorization": "Bearer xoxb-mock-bot-token",
+    "Authorization": "Bearer mock-bot-token",
 }
 TEMPLATES_DIR = Path(__file__).resolve().parents[1] / "mock_slack" / "web" / "templates"
 

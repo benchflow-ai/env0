@@ -4,7 +4,7 @@ then fills from the shared content library.
 Usage:
     seed_task_scenario(db, fake, user, personas, "vendor-report-organize")
 
-Each task must have a ``data/needles.py`` under ``tasks/<task>/`` with:
+Each task must have a ``data/needles.py`` under the configured task root with:
     NEEDLES        — list of standalone email dicts
     NEEDLE_THREADS — list of multi-message thread dicts
     FILL_CONFIG    — dict with target_count, distribution ratios, flags
@@ -47,17 +47,17 @@ from mock_gmail.seed.long_context import (
     _parameterize,
 )
 
-_HARBOR_DIR = Path(os.environ["TASKS_DIR"]) if "TASKS_DIR" in os.environ else Path(__file__).resolve().parents[5] / "tasks"
+_TASKS_DIR = Path(os.environ["TASKS_DIR"]) if "TASKS_DIR" in os.environ else Path(__file__).resolve().parents[5] / "example_tasks"
 
 
 def _load_needles_module(task_dir_name: str | None = None, task_data_path: str | None = None):
-    """Dynamically load data/needles.py for a harbor task or explicit task-data path."""
+    """Dynamically load data/needles.py for a repo task or explicit task-data path."""
     if task_data_path:
         needles_path = Path(task_data_path) / "needles.py"
     else:
         if not task_dir_name:
             raise ValueError("task_dir_name or task_data_path required")
-        needles_path = _HARBOR_DIR / task_dir_name / "data" / "needles.py"
+        needles_path = _TASKS_DIR / task_dir_name / "data" / "needles.py"
     if not needles_path.exists():
         raise FileNotFoundError(f"Task needles not found: {needles_path}")
 
@@ -66,7 +66,7 @@ def _load_needles_module(task_dir_name: str | None = None, task_data_path: str |
         if task_dir_name
         else f"path_{abs(hash(str(needles_path.resolve())))}"
     )
-    module_name = f"harbor_needles_{module_suffix}"
+    module_name = f"env0_needles_{module_suffix}"
     if module_name in sys.modules:
         return sys.modules[module_name]
 
@@ -174,7 +174,7 @@ def _write_manifest(
 
 def get_task_data_summary(task_dir_name: str) -> dict:
     """Return a summary of a task's seed data config for the admin API."""
-    needles_path = _HARBOR_DIR / task_dir_name / "data" / "needles.py"
+    needles_path = _TASKS_DIR / task_dir_name / "data" / "needles.py"
     if not needles_path.exists():
         return {"has_per_task_data": False}
 

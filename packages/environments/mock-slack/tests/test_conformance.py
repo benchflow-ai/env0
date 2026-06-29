@@ -16,7 +16,7 @@ FIXTURES_DIR = Path(__file__).parent / "fixtures" / "real_slack"
 WORKSPACE_HEADER = {"X-Mock-Slack-Workspace": "workspace_001"}
 USER_TOKEN_HEADER = {
     "X-Mock-Slack-Workspace": "workspace_001",
-    "Authorization": "Bearer xoxp-mock-user-token",
+    "Authorization": "Bearer mock-user-token",
 }
 
 

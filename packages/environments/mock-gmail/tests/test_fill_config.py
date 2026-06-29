@@ -21,7 +21,7 @@ def _patch_summary(mod):
     return mock.patch.multiple(
         "mock_gmail.seed.task_seed",
         _load_needles_module=mock.Mock(return_value=mod),
-        _HARBOR_DIR=mock.MagicMock(
+        _TASKS_DIR=mock.MagicMock(
             __truediv__=lambda self, *a: mock.MagicMock(
                 __truediv__=lambda self, *a: mock.MagicMock(exists=lambda: True)
             ),
@@ -39,7 +39,7 @@ class TestGmailFillConfig:
         task_dir = tmp_path / "fake-task" / "data"
         task_dir.mkdir(parents=True)
         (task_dir / "needles.py").write_text("")
-        with mock.patch("mock_gmail.seed.task_seed._HARBOR_DIR", tmp_path), \
+        with mock.patch("mock_gmail.seed.task_seed._TASKS_DIR", tmp_path), \
              mock.patch("mock_gmail.seed.task_seed._load_needles_module", return_value=mod):
             summary = get_task_data_summary("fake-task")
         assert summary["fill_config"] == {"target_count": 200}
@@ -49,7 +49,7 @@ class TestGmailFillConfig:
         task_dir = tmp_path / "fake-task" / "data"
         task_dir.mkdir(parents=True)
         (task_dir / "needles.py").write_text("")
-        with mock.patch("mock_gmail.seed.task_seed._HARBOR_DIR", tmp_path), \
+        with mock.patch("mock_gmail.seed.task_seed._TASKS_DIR", tmp_path), \
              mock.patch("mock_gmail.seed.task_seed._load_needles_module", return_value=mod):
             summary = get_task_data_summary("fake-task")
         assert summary["fill_config"] == {}
@@ -62,7 +62,7 @@ class TestGmailFillConfig:
         task_dir = tmp_path / "fake-task" / "data"
         task_dir.mkdir(parents=True)
         (task_dir / "needles.py").write_text("")
-        with mock.patch("mock_gmail.seed.task_seed._HARBOR_DIR", tmp_path), \
+        with mock.patch("mock_gmail.seed.task_seed._TASKS_DIR", tmp_path), \
              mock.patch("mock_gmail.seed.task_seed._load_needles_module", return_value=mod):
             summary = get_task_data_summary("fake-task")
         assert summary["fill_config"] == {}

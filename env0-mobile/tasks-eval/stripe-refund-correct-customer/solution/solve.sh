@@ -15,7 +15,7 @@
 set -euo pipefail
 
 STRIPE="${STRIPE_URL:-http://localhost:9007}"
-KEY="sk_test_env_0_51deterministic"
+KEY="stripe-test-key-env0-deterministic"
 AUTH=(-H "Authorization: Bearer ${KEY}")
 
 TARGET_NAME="Acme Corporation"
