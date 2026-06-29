@@ -114,5 +114,5 @@ mock_gdoc/
 
 - Repo-level task-shaped fixtures live under `example_tasks/`; local demo/admin
   tasks are registered under `mock_gdoc/tasks/`.
-- Development backlog: see `TODO.md`.
+- Development backlog lives in tracked issues and pull requests.
 - For repo-wide workflow notes, see the root `README.md` and `AGENTS.md`.

@@ -3,12 +3,12 @@
   "items": [
     {
       "etag": "\"00000000000000000000\"",
-      "id": "user:mediar.acc1@gmail.com",
+      "id": "user:fixture-user@example.com",
       "kind": "calendar#aclRule",
       "role": "owner",
       "scope": {
         "type": "user",
-        "value": "mediar.acc1@gmail.com"
+        "value": "fixture-user@example.com"
       }
     }
   ],

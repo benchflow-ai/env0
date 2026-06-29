@@ -1,6 +1,6 @@
 # mock-slack: API Validation TODO
 
-Based on the [API Validation Playbook](../../docs/api-validation-playbook.md). Reference implementation: mock-gmail.
+Based on the [API Validation Playbook](../../../docs/api-validation-playbook.md). Reference implementation: mock-gmail.
 
 ---
 
@@ -80,7 +80,7 @@ Based on the [API Validation Playbook](../../docs/api-validation-playbook.md). R
 
 ## Phase 3: Report and Fix
 
-- [x] 3.1 Produce fidelity report (document mismatches with bug class and severity) → `FIDELITY_REPORT.md`
+- [x] 3.1 Document mismatches with bug class and severity in this tracker and `API_NOTES.md`
 - [x] 3.2 Fix high-severity mismatches
   - Bug 2: `MessageSchema.model_config = ConfigDict(exclude_none=True)` — 7 null-vs-absent fixed ✓
   - Bug 1: `warning` + `response_metadata` on all 18+ write endpoints ✓

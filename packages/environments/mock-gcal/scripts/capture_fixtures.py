@@ -3,12 +3,12 @@
 
 Usage:
     python scripts/capture_fixtures.py
-    python scripts/capture_fixtures.py --account dowhiz@deep-tutor.com --diff
+    python scripts/capture_fixtures.py --account fixture-user@example.com --diff
 
 This script uses the `gws` CLI as the source of truth for live Calendar API
 calls. Before running it, authenticate with Calendar scopes:
 
-    gws auth login --account dowhiz@deep-tutor.com --services calendar
+    gws auth login --account fixture-user@example.com --services calendar
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ from uuid import uuid4
 
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURES_DIR = ROOT / "tests" / "fixtures" / "real_gcal"
-DEFAULT_ACCOUNT = os.environ.get("GOOGLE_WORKSPACE_CLI_ACCOUNT", "dowhiz@deep-tutor.com")
+DEFAULT_ACCOUNT = os.environ.get("GOOGLE_WORKSPACE_CLI_ACCOUNT", "fixture-user@example.com")
 API_BASE = "https://www.googleapis.com/calendar/v3"
 
 

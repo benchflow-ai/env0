@@ -7,7 +7,7 @@ A high-fidelity, stateful mock of the Slack Web API, built for stress-testing AI
 - **41 Slack Web API endpoints** — conversations, chat, users, reactions, files, pins, reminders, search, team, auth
 - **Stateful SQLite backend** — persistent CRUD across channels, messages, reactions, pins, files, and reminders
 - **Snapshot/restore** — save and reset DB state for deterministic evaluation runs
-- **51 golden fixtures** captured from a real Slack Developer Program sandbox with 208 tests validating response shapes and behavior
+- **57 golden fixtures** captured from a real Slack Developer Program sandbox with tests validating response shapes and behavior
 - **Evaluation tasks** with automated verifiers using DB state diffs and action logs
 - **MCP server** — expose all endpoints as MCP tools via `fastapi-mcp`
 - **Web UI** — Slack-style channel/message view plus a standalone dev dashboard (API explorer, DB viewer)
@@ -137,14 +137,15 @@ diff = requests.get("http://127.0.0.1:9005/_admin/diff").json()
 uv run --extra dev pytest tests -q
 ```
 
-| Suite | Tests | What it covers |
-|-------|-------|----------------|
-| `test_conformance.py` | 160 | Response shape validation against 51 real Slack API golden fixtures |
-| `test_api.py` | 48 | Functional CRUD: channel lifecycle, message lifecycle, membership, files, search, pagination, error cases |
+| Suite | What it covers |
+|-------|----------------|
+| `test_conformance.py` | Response-shape validation against real Slack API golden fixtures |
+| `test_api.py` | Functional CRUD: channel lifecycle, message lifecycle, membership, files, search, error cases |
+| `test_pagination.py` | Cursor pagination behavior |
 
 ### Golden fixtures
 
-Fixtures in `tests/fixtures/real_slack/` are captured from a real Slack Developer Program sandbox. Conformance tests check that the mock's response structure (keys, types, nesting) matches the real Slack fixture — not exact values, since IDs and timestamps differ.
+Fixtures in `tests/fixtures/real_slack/` are captured from a Slack Developer Program sandbox. Conformance tests check that the mock's response structure (keys, types, nesting) matches the real Slack fixture — not exact values, since IDs and timestamps differ.
 
 See `tests/fixtures/mock_coverage.json` for the full mapping of spec endpoint → fixture → tests.
 
@@ -161,7 +162,6 @@ Validates that the default seed meets invariants: correct user count, all person
 ```
 packages/environments/mock-slack/
 ├── API_NOTES.md                      # Ground truth, API quirks, design decisions
-├── FIDELITY_REPORT.md                # Mismatch findings and fixes from API validation
 ├── mock_slack/
 │   ├── api/              # FastAPI routes (conversations, chat, users, reactions, pins, files, search, team, auth, reminders)
 │   ├── models/           # SQLAlchemy ORM (Workspace, SlackUser, Channel, Message, Reaction, SlackFile, Pin, Reminder)
@@ -179,8 +179,9 @@ packages/environments/mock-slack/
     ├── fixtures/
     │   ├── slack_api_spec.json       # All 83 real Slack API endpoints
     │   ├── mock_coverage.json        # Endpoint → fixture → test mapping
-    │   └── real_slack/               # 51 golden fixtures + _capture_metadata.json
+    │   └── real_slack/               # 57 golden fixtures + _capture_metadata.json
     ├── conftest.py                   # Seeded DB + TestClient fixture
-    ├── test_conformance.py           # 160 conformance tests
-    └── test_api.py                   # 48 functional CRUD tests
+    ├── test_conformance.py
+    ├── test_api.py
+    └── test_pagination.py
 ```

@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  repo-smoke:
+    name: Repo smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v5
+      - name: Run repo smoke
+        run: scripts/smoke_dev.sh
+
+  conformance:
+    name: Conformance (${{ matrix.package }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - mock-gmail
+          - mock-gcal
+          - mock-gdoc
+          - mock-gdrive
+          - mock-slack
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v5
+      - name: Run conformance suite
+        working-directory: packages/environments/${{ matrix.package }}
+        run: uv run --extra dev pytest tests/test_conformance.py -q
+
+  docker-smoke:
+    name: Docker base and examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build base image
+        run: docker/build-base.sh
+      - name: Smoke example task images
+        run: PULL_BASE=0 scripts/smoke_docker_examples.sh

@@ -15,7 +15,7 @@
   ],
   "etag": "\"1774575631795733\"",
   "foregroundColor": "#000000",
-  "id": "mediar.acc1@gmail.com",
+  "id": "fixture-user@example.com",
   "kind": "calendar#calendarListEntry",
   "notificationSettings": {
     "notifications": [
@@ -39,7 +39,7 @@
   },
   "primary": true,
   "selected": true,
-  "summary": "mediar.acc1@gmail.com",
+  "summary": "fixture-user@example.com",
   "timeZone": "UTC",
   "_captured_at": "2026-03-27T21:09:04.157039+00:00"
 }

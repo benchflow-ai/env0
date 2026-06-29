@@ -32,7 +32,7 @@ def gws(*args):
 def slack_get(path):
     """GET request to Slack mock API."""
     url = f"{SLACK}{path}"
-    req = urllib.request.Request(url, headers={"Authorization": "Bearer xoxb-mock-bot-token"})
+    req = urllib.request.Request(url, headers={"Authorization": "Bearer mock-bot-token"})
     with urllib.request.urlopen(req) as resp:
         return json.loads(resp.read())
 

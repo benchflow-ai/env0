@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SLACK="${SLACK_URL:-http://localhost:9002}"
-BOT="Authorization: Bearer xoxb-mock-bot-token"
+BOT="Authorization: Bearer mock-bot-token"
 WS="X-Mock-Slack-Workspace: workspace_001"
 
 # 1. Check #legal channel -- read the full thread

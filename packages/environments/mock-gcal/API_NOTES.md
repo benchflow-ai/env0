@@ -13,7 +13,7 @@
   - Events: https://developers.google.com/workspace/calendar/api/v3/reference/events
   - FreeBusy: https://developers.google.com/workspace/calendar/api/v3/reference/freebusy
   - Settings: https://developers.google.com/workspace/calendar/api/v3/reference/settings
-- Test account for live verification: `dowhiz@deep-tutor.com`
+- Test account for live verification: `fixture-user@example.com`
 - Fixture capture script: `scripts/capture_fixtures.py`
 - Seed validation script: `scripts/validate_seed.py`
 - Endpoint spec: `tests/fixtures/gcal_api_spec.json`
@@ -55,7 +55,7 @@ Discovered from the imported real Calendar fixtures and validated against the cu
 
 ## Open Questions
 
-- Fresh fixture recapture still requires Calendar OAuth scopes for `dowhiz@deep-tutor.com`. The workspace currently has a cached gws identity but not the needed encrypted Calendar credentials.
+- Fresh fixture recapture still requires Calendar OAuth scopes for `fixture-user@example.com`. The workspace currently has a cached gws identity but not the needed encrypted Calendar credentials.
 - `channels.stop` should be re-captured with fresh auth because the imported historical artifact looks like a downloaded HTML stub rather than a real Calendar API body.
 - Calendar discovery schemas are not yet materialized into `gcal_api_spec.json`; if we want field-level schema fidelity like Gmail, we should enrich that artifact in a follow-up.
 - `gws calendar calendarList list` still returns `insufficientPermissions` for this account even after re-auth with calendarList scopes, while `calendarList.get` succeeds. The live capture therefore retains the imported `calendarlist_list.json` baseline.

@@ -13,4 +13,4 @@ RUN mkdir -p /logs/verifier /logs/agent /logs/artifacts
 RUN chown agent:agent /logs/agent /logs/artifacts
 
 # NOTE: Daytona doesn't run CMD/ENTRYPOINT. gmail is started via
-# harbor_runner.py's AGENT_START hook (see _add_direct_mode_hook).
+# the env-0 runner AGENT_START hook.

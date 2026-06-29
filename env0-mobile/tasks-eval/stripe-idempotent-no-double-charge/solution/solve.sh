@@ -12,7 +12,7 @@
 set -euo pipefail
 
 BASE="${STRIPE_URL:-http://localhost:9007}"
-KEY="${STRIPE_API_KEY:-sk_test_env_0_51deterministic}"
+KEY="${STRIPE_API_KEY:-stripe-test-key-env0-deterministic}"
 AUTH=(-H "Authorization: Bearer ${KEY}")
 
 TARGET_EMAIL="dana@meadowlark-supply.com"
