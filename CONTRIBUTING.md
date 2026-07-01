@@ -30,9 +30,6 @@ env runtime validation and copied-reference workflows:
 - [`tasks/`](https://github.com/benchflow-ai/env0/tree/main/tasks) contains a
   small copied [BenchFlow](https://github.com/benchflow-ai/benchflow)-native
   reference set.
-- [`env0-mobile/`](https://github.com/benchflow-ai/env0/tree/main/env0-mobile)
-  contains larger copied eval/train corpora for downstream mobile and
-  post-training workflows.
 
 ## What To Contribute
 
