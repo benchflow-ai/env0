@@ -17,7 +17,7 @@ There are two ways to contribute:
   this repo.
 
 If you want to contribute benchmark tasks or scoring policy, use the downstream
-benchmark package that owns those tasks. In this repo, `example-tasks/` contains a small copied 
+benchmark package that owns those tasks. In this repo, [`example_tasks/`](https://github.com/benchflow-ai/env0/tree/main/example_tasks) contains a small copied 
 [BenchFlow](https://github.com/benchflow-ai/benchflow)-native reference
 set.
 
