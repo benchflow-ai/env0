@@ -1,25 +1,38 @@
 # Contributing to env0
 
-env0 is a mock-environment runtime for LLM agents **training and evaluation**. 
-It owns **high fidelity** mock services and seeding data to simulate **real world** working environments.
+env0 is the first-party mock-environment runtime for agent testing. It owns
+high-fidelity mock services, deterministic seed data, local tooling,
+API-parity fixtures, devhub, and the shared Docker base image.
 
-env0 inherits from the mock environments in [ClawsBench](https://clawsbench.benchflow.ai/), 
-a benchmark for evaluating and improving LLM agents in realistic productivity settings.
-The env0 v0.1 version has five high-fidelity mock services that 
-replicate real Google Workspace and Slack APIs with full state management and deterministic snapshot/restore.
+The current v0.1 runtime ships five high-fidelity mock services:
+`mock-gmail`, `mock-gcal`, `mock-gdrive`, `mock-gdoc`, and `mock-slack`.
+They replicate Google Workspace and Slack API surfaces with state management
+and deterministic snapshot/restore.
 
 There are two ways to contribute:
 
-- **Chat with BenchBot (recommended for contributing new mock environments into env0).** Describe the environment you want in
-  the [BenchFlow Discord](https://discord.gg/G9dg3EfSva) and build it conversationally with an agent — no local
-  setup, no fork, no PR mechanics. The same way you iteract with your coding agents like Codex or Claude Code.
+- **Chat with BenchBot.** Best for proposing or prototyping a new mock
+  environment with maintainer help. Describe the environment you want in the
+  [BenchFlow Discord](https://discord.gg/G9dg3EfSva) and build it
+  conversationally with an agent, the same way you interact with coding agents
+  like Codex or Claude Code. Final env0 changes still go through maintainer
+  review before landing.
 - **Open a pull request.** The classic GitHub workflow for direct changes to
   this repo.
 
 If you want to contribute benchmark tasks or scoring policy, use the downstream
-benchmark package that owns those tasks. In this repo, [`example_tasks/`](https://github.com/benchflow-ai/env0/tree/main/example_tasks) contains a small copied 
-[BenchFlow](https://github.com/benchflow-ai/benchflow)-native reference
-set.
+benchmark package that owns those tasks. This repo keeps task-shaped assets for
+env runtime validation and copied-reference workflows:
+
+- [`example_tasks/`](https://github.com/benchflow-ai/env0/tree/main/example_tasks)
+  contains small runtime fixtures/templates for env0 service and launcher
+  testing.
+- [`tasks/`](https://github.com/benchflow-ai/env0/tree/main/tasks) contains a
+  small copied [BenchFlow](https://github.com/benchflow-ai/benchflow)-native
+  reference set.
+- [`env0-mobile/`](https://github.com/benchflow-ai/env0/tree/main/env0-mobile)
+  contains larger copied eval/train corpora for downstream mobile and
+  post-training workflows.
 
 ## What To Contribute
 
@@ -36,11 +49,15 @@ Not sure where to start? See
 
 ## Contribute New Environments With BenchBot
 
-BenchBot is [BenchFlow](https://www.benchflow.ai/)'s Discord-native build agent. You drive it the way you
-would use Claude Code or Codex: say what you want, hand it reference
-material, and iterate on what it builds. Behind the scenes BenchBot provisions
-a dedicated build VM for you, runs coding agents on it, streams progress back
-into the Discord thread, and can post live preview URLs of what it built.
+BenchBot is [BenchFlow](https://www.benchflow.ai/)'s Discord-native build
+agent for guided prototyping. You drive it the way you would use Claude Code or
+Codex: say what you want, hand it reference material, and iterate on what it
+builds. Behind the scenes BenchBot provisions a dedicated build VM for you,
+runs coding agents on it, streams progress back into the Discord thread, and
+can post live preview URLs for generated artifacts.
+
+Treat BenchBot output as a starting point. Finished env0 contributions still
+need to satisfy the repo boundaries and validation checks below.
 
 ### 1. Join the BenchFlow Discord
 
@@ -48,10 +65,10 @@ Join at [discord.gg/G9dg3EfSva](https://discord.gg/G9dg3EfSva).
 
 ### 2. Connect your agent credentials
 
-Builds run on your own credentials, on your own per-user VM provide by us. Run
-`/bot-connect` in Discord and follow the link to the
-[dashboard connect page](https://benchchat.vercel.app/connect), then paste
-your Anthropic API key there.
+Builds run with your own agent credentials on a per-user VM provided by
+BenchFlow. Run `/bot-connect` in Discord and follow the link to the
+[dashboard connect page](https://benchchat.vercel.app/connect), then paste your
+Anthropic API key there.
 
 Credentials are entered on the dashboard only and stored encrypted. Never
 paste API keys or any other secret into a Discord message.
@@ -76,7 +93,8 @@ the thread:
 - links to the real service's API documentation
 - sample request/response payloads, error shapes, pagination examples
 - what realistic seed data should look like (inbox contents, channel history,
-  file trees — sanitized, never real account exports)
+  file trees; use sanitized synthetic data, never real account exports or
+  handoff bundles)
 - one or two agent tasks the environment should be able to support
 
 ### 5. Iterate in the thread
@@ -89,8 +107,8 @@ Code or Codex.
 ### 6. Follow along on the dashboard
 
 Open [benchchat.vercel.app](https://benchchat.vercel.app) and sign in with
-Discord. The dashboard shows your sessions, per-round runs and prompts, full
-agent traces, artifacts, and preview links.
+Discord. The dashboard shows your sessions, run history, agent traces,
+artifacts, and preview links.
 
 One note on lifecycle: build VMs are recycled after a couple of hours of
 inactivity. Your traces and artifacts stay on the dashboard; a new message
@@ -98,12 +116,13 @@ simply starts a fresh session.
 
 ### 7. Landing it in env0
 
-When the environment holds up — endpoints behave, seeds are deterministic,
+When the prototype holds up — endpoints behave, seeds are deterministic, and
 previews look right — say so in the thread and a maintainer will review it
-against the boundaries below and help land it in `packages/environments/`.
-Skimming [`docs/adding-new-environment.md`](docs/adding-new-environment.md)
-is still worthwhile so you know what a finished environment includes, even
-when BenchBot does the typing.
+against the boundaries below. A maintainer may land the generated work directly
+or ask you to open a normal PR from the generated branch. Skimming
+[`docs/adding-new-environment.md`](docs/adding-new-environment.md) is still
+worthwhile so you know what a finished environment includes, even when BenchBot
+does the typing.
 
 ## Boundaries
 
@@ -122,6 +141,8 @@ PR:
 - Do not copy environment source code into thin task images.
 - Do not commit credentials, OAuth tokens, live account exports, or private
   customer data — and do not paste them into Discord.
+- Do not commit BenchChat handoff bundles, `.env` files, generated credential
+  exports, or API-key screenshots.
 
 ## Contribute With A Pull Request
 
@@ -194,9 +215,13 @@ done
 
 Use the same loop with `env0-mobile/tasks-eval`,
 `env0-mobile/tasks-train`, or `env0-mobile/tasks-train-mini` when validating
-those copied corpora. These checks require the BenchFlow CLI. End-to-end
-evaluation of copied tasks also requires a pullable
-`ghcr.io/benchflow-ai/env-0-base:latest` image.
+those copied corpora. These checks require the BenchFlow CLI and validate
+copied task packages structurally only.
+
+End-to-end evaluation of copied downstream task packages may also require the
+upstream `ghcr.io/benchflow-ai/env-0-base:latest` image because those packages
+preserve their source-runner contract. New env0 example-task Dockerfiles should
+instead use `ghcr.io/benchflow-ai/env0:<VERSION>`.
 
 ### Pull request checklist
 
