@@ -1,22 +1,25 @@
 # Contributing to env0
 
-env0 is a mock-environment runtime for agent testing. It owns first-party mock
-service development, local environment tooling, deterministic seeding, API
-parity, devhub surfaces, and the shared Docker base image.
+env0 is a mock-environment runtime for LLM agents **training and evaluation**. 
+It owns **high fidelity** mock services and seeding data to simulate **real world** working environments.
+
+env0 inherits from the mock environments in [ClawsBench](https://clawsbench.benchflow.ai/), 
+a benchmark for evaluating and improving LLM agents in realistic productivity settings.
+The env0 v0.1 version has five high-fidelity mock services that 
+replicate real Google Workspace and Slack APIs with full state management and deterministic snapshot/restore.
 
 There are two ways to contribute:
 
-- **Chat with BenchBot (recommended).** Describe the environment you want in
-  the BenchFlow Discord and build it conversationally with an agent — no local
-  setup, no fork, no PR mechanics.
+- **Chat with BenchBot (recommended for contributing new mock environments into env0).** Describe the environment you want in
+  the [BenchFlow Discord](https://discord.gg/G9dg3EfSva) and build it conversationally with an agent — no local
+  setup, no fork, no PR mechanics. The same way you iteract with your coding agents like Codex or Claude Code.
 - **Open a pull request.** The classic GitHub workflow for direct changes to
   this repo.
 
 If you want to contribute benchmark tasks or scoring policy, use the downstream
-benchmark package that owns those tasks. In this repo, `example_tasks/` are
-runtime fixtures, `tasks/` contains a small copied BenchFlow-native reference
-set, and `env0-mobile/` contains larger copied corpora for eval/training
-workflows.
+benchmark package that owns those tasks. In this repo, `example-tasks/` contains a small copied 
+[BenchFlow](https://github.com/benchflow-ai/benchflow)-native reference
+set.
 
 ## What To Contribute
 
@@ -31,13 +34,13 @@ workflows.
 Not sure where to start? See
 [`docs/good-first-contributions.md`](docs/good-first-contributions.md).
 
-## Contribute With BenchBot
+## Contribute New Environments With BenchBot
 
-BenchBot is BenchFlow's Discord-native build agent. You drive it the way you
-would drive Claude Code or Codex: say what you want, hand it reference
+BenchBot is [BenchFlow](https://www.benchflow.ai/)'s Discord-native build agent. You drive it the way you
+would use Claude Code or Codex: say what you want, hand it reference
 material, and iterate on what it builds. Behind the scenes BenchBot provisions
-a dedicated build VM for you, runs a coding agent on it, streams progress back
-into the Discord thread, and posts a live preview URL of what it built.
+a dedicated build VM for you, runs coding agents on it, streams progress back
+into the Discord thread, and can post live preview URLs of what it built.
 
 ### 1. Join the BenchFlow Discord
 
@@ -45,7 +48,7 @@ Join at [discord.gg/G9dg3EfSva](https://discord.gg/G9dg3EfSva).
 
 ### 2. Connect your agent credentials
 
-Builds run on your own credentials, on your own per-user VM. Run
+Builds run on your own credentials, on your own per-user VM provide by us. Run
 `/bot-connect` in Discord and follow the link to the
 [dashboard connect page](https://benchchat.vercel.app/connect), then paste
 your Anthropic API key there.
