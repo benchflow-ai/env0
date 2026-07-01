@@ -116,8 +116,8 @@ simply starts a fresh session.
 
 ### 7. Landing it in env0
 
-When the prototype holds up -- endpoints behave, seeds are deterministic, and
-previews look right -- say so in the thread and a maintainer will review it
+When the prototype holds up — endpoints behave, seeds are deterministic, and
+previews look right — say so in the thread and a maintainer will review it
 against the boundaries below. A maintainer may land the generated work directly
 or ask you to open a normal PR from the generated branch. Skimming
 [`docs/adding-new-environment.md`](docs/adding-new-environment.md) is still
@@ -140,7 +140,7 @@ PR:
   templates.
 - Do not copy environment source code into thin task images.
 - Do not commit credentials, OAuth tokens, live account exports, or private
-  customer data -- and do not paste them into Discord.
+  customer data — and do not paste them into Discord.
 - Do not commit BenchChat handoff bundles, `.env` files, generated credential
   exports, or API-key screenshots.
 
