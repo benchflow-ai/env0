@@ -4,6 +4,14 @@ env0 is a mock-environment runtime for agent testing. It owns first-party mock
 service development, local environment tooling, deterministic seeding, API
 parity, devhub surfaces, and the shared Docker base image.
 
+There are two ways to contribute:
+
+- **Chat with BenchBot (recommended).** Describe the environment you want in
+  the BenchFlow Discord and build it conversationally with an agent — no local
+  setup, no fork, no PR mechanics.
+- **Open a pull request.** The classic GitHub workflow for direct changes to
+  this repo.
+
 If you want to contribute benchmark tasks or scoring policy, use the downstream
 benchmark package that owns those tasks. In this repo, `example_tasks/` are
 runtime fixtures, `tasks/` contains a small copied BenchFlow-native reference
@@ -14,13 +22,90 @@ workflows.
 
 | Area | Good contribution | Start here |
 |---|---|---|
-| Mock API fidelity | Add or correct endpoints, response shapes, errors, pagination, side effects, or conformance fixtures. | [`docs/api-validation-playbook.md`](docs/api-validation-playbook.md) |
 | Environment packages | Add a new `mock-*` service or improve an existing one. | [`docs/adding-new-environment.md`](docs/adding-new-environment.md) |
+| Mock API fidelity | Add or correct endpoints, response shapes, errors, pagination, side effects, or conformance fixtures. | [`docs/api-validation-playbook.md`](docs/api-validation-playbook.md) |
 | Seed realism | Improve deterministic seed data, filler distributions, role markers, or task-aware seed paths. | Existing `packages/environments/mock-*/seed/` modules |
 | Dev tooling | Improve `scripts/dev.sh`, `scripts/env0_control.py`, devhub, smoke tests, or Docker base-image generation. | [`docs/dev.md`](docs/dev.md) |
 | Documentation | Fix inaccurate commands, clarify preconditions, or document real parity gaps. | This file plus [`README.md`](README.md) |
 
+Not sure where to start? See
+[`docs/good-first-contributions.md`](docs/good-first-contributions.md).
+
+## Contribute With BenchBot
+
+BenchBot is BenchFlow's Discord-native build agent. You drive it the way you
+would drive Claude Code or Codex: say what you want, hand it reference
+material, and iterate on what it builds. Behind the scenes BenchBot provisions
+a dedicated build VM for you, runs a coding agent on it, streams progress back
+into the Discord thread, and posts a live preview URL of what it built.
+
+### 1. Join the BenchFlow Discord
+
+Join at [discord.gg/G9dg3EfSva](https://discord.gg/G9dg3EfSva).
+
+### 2. Connect your agent credentials
+
+Builds run on your own credentials, on your own per-user VM. Run
+`/bot-connect` in Discord and follow the link to the
+[dashboard connect page](https://benchchat.vercel.app/connect), then paste
+your Anthropic API key there.
+
+Credentials are entered on the dashboard only and stored encrypted. Never
+paste API keys or any other secret into a Discord message.
+
+### 3. Tell BenchBot what you want to build
+
+Mention `@BenchBot` in a channel where it is active and describe the
+environment. Name the real service, the API surfaces that matter, and what
+realistic state looks like. For example:
+
+```text
+@BenchBot I want to add a mock Notion environment to env0: REST API parity
+for pages, databases, and search; deterministic seed data; and conformance
+fixtures. API reference: https://developers.notion.com/reference
+```
+
+### 4. Provide docs and files
+
+The fidelity of a mock tracks the quality of its reference material. Share in
+the thread:
+
+- links to the real service's API documentation
+- sample request/response payloads, error shapes, pagination examples
+- what realistic seed data should look like (inbox contents, channel history,
+  file trees — sanitized, never real account exports)
+- one or two agent tasks the environment should be able to support
+
+### 5. Iterate in the thread
+
+Reply in the thread to keep going — follow-up messages continue the same
+session, no re-mention needed. Ask for changes, point out parity gaps, and
+check each round's preview URL, exactly like a code-review loop with Claude
+Code or Codex.
+
+### 6. Follow along on the dashboard
+
+Open [benchchat.vercel.app](https://benchchat.vercel.app) and sign in with
+Discord. The dashboard shows your sessions, per-round runs and prompts, full
+agent traces, artifacts, and preview links.
+
+One note on lifecycle: build VMs are recycled after a couple of hours of
+inactivity. Your traces and artifacts stay on the dashboard; a new message
+simply starts a fresh session.
+
+### 7. Landing it in env0
+
+When the environment holds up — endpoints behave, seeds are deterministic,
+previews look right — say so in the thread and a maintainer will review it
+against the boundaries below and help land it in `packages/environments/`.
+Skimming [`docs/adding-new-environment.md`](docs/adding-new-environment.md)
+is still worthwhile so you know what a finished environment includes, even
+when BenchBot does the typing.
+
 ## Boundaries
+
+These apply to every contribution, whether it comes from BenchBot or a direct
+PR:
 
 - Keep service ids and CLIs on current `mock-*` names.
 - Keep service URL env vars on current `MOCK_*_URL` names.
@@ -33,9 +118,14 @@ workflows.
   templates.
 - Do not copy environment source code into thin task images.
 - Do not commit credentials, OAuth tokens, live account exports, or private
-  customer data.
+  customer data — and do not paste them into Discord.
 
-## Development Setup
+## Contribute With A Pull Request
+
+Prefer this path for direct code changes: bug fixes, tooling, docs, or when
+you want full local control over an environment package.
+
+### Development setup
 
 Use `uv run` from the relevant package directory. Normal workflows do not need
 manual virtualenv setup.
@@ -58,7 +148,7 @@ Start only services declared by an example task:
 scripts/dev.sh task gdrive-archive-stale-drafts
 ```
 
-## Validation Matrix
+### Validation matrix
 
 Pick the narrowest checks that cover your change.
 
@@ -105,7 +195,7 @@ those copied corpora. These checks require the BenchFlow CLI. End-to-end
 evaluation of copied tasks also requires a pullable
 `ghcr.io/benchflow-ai/env-0-base:latest` image.
 
-## Pull Request Checklist
+### Pull request checklist
 
 Before opening a PR:
 
@@ -123,3 +213,13 @@ In the PR body, include:
 - The validation commands and results.
 - Any credentials, image-publish permissions, or provider access that were
   intentionally not available.
+
+## Questions, Conduct, And Security
+
+- Questions or ideas? Ask in the
+  [BenchFlow Discord](https://discord.gg/G9dg3EfSva) — the same server where
+  BenchBot lives.
+- All community spaces follow the
+  [Code of Conduct](CODE_OF_CONDUCT.md).
+- Report vulnerabilities privately per the [security policy](SECURITY.md),
+  not in public issues.
